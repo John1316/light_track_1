@@ -11,13 +11,13 @@
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.php">
                             <img src="assets/img/logo.png" alt="logo" class="img-fluid">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <a href="index-four.html" class="nav-link ">Home</a>
+                                    <a href="index.php" class="nav-link ">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="about.html" class="nav-link">About</a>
@@ -27,9 +27,6 @@
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
                                                 <a href="events.php" class="nav-link">Events</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="courses.html" class="nav-link">courses</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
@@ -52,16 +49,16 @@
                                         <li class="nav-item">
                                             <a href="majors.php" class="nav-link">Career path</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <!-- <li class="nav-item">
                                             <a href="blog-details.html" class="nav-link">Job titles</a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item">
                                             <a href="faculty.html" class="nav-link">Faculty</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
+                                    <a href="contact.php" class="nav-link">Contact Us</a>
                                 </li>
                             </ul>
                             <div class="other-option">
