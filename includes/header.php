@@ -26,7 +26,7 @@
                                     <a href="#" class="nav-link dropdown-toggle">services</a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="events.html" class="nav-link">events</a>
+                                                <a href="events.php" class="nav-link">Events</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="courses.html" class="nav-link">courses</a>
