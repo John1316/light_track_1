@@ -1,24 +1,36 @@
 <?php
-require_once('functions/connection.php');
+require_once( 'connectionproject.php');
 if(isset($_POST['submit'])){
-
-   $name = mysqli_real_escape_string($con, $_POST['name']);
    $email = mysqli_real_escape_string($con, $_POST['email']);
-   $phone_no = mysqli_real_escape_string($con, $_POST['phone_no']);
-   $subject = mysqli_real_escape_string($con, $_POST['subject']);
-   $message = mysqli_real_escape_string($con, $_POST['message']);
- 
+   $pass = mysqli_real_escape_string($con, $_POST['pass']);
 
- 
-  $query="INSERT INTO feedback (`name`,`email`,`phone_no`,`subject`,`message`) VALUES('$name','$email','$phone_no','$subject','$message')";
-  mysqli_query($con,$query);
+   
 
-
-
-   $error= 'your feedback were sent successfully, please check your mail from time to time, because you will be answered as soon as possible and you are welcomed.';
-
+   $select = " SELECT * FROM `advisors` WHERE email = '$email' && password= '$pass' ";
+   $result = mysqli_query($con, $select);
+   if (!$result) {
+    die('check as something went wrong in the sql statement');
+} else {
+    while ($row = mysqli_fetch_array($result)){
+        $_SESSION['id'] = $row['advisor_id'];
+        $_SESSION['status'] = $row['status'];
+     
+    }
+    $count = mysqli_num_rows($result);
+    if ($count == 1 && $_SESSION['status'] == 1) {
+        $_SESSION['name'] = $email;
+        header("location: index.html");
+    } elseif($count == 1 && $_SESSION['status'] == 0){
+        $error = "Your are not verified";
+    }
+    else {
+        $error = "Your Username or Password is uncorrect";
+    }
+};    
 }
+  
 ?>
+
 
 <!doctype html>
 <html lang="zxx">
@@ -46,10 +58,10 @@ if(isset($_POST['submit'])){
         <link rel="stylesheet" href="assetss/css/style.css">
 		<!-- Dark CSS -->
         <link rel="stylesheet" href="assetss/css/dark.css">
-        <!-- Responsive CSS -->
-        <link rel="stylesheet" href="assetss/css/responsive.css">        
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="assetss/css/responsive.css">
         <!-- Title CSS -->
-        <title>Light Track - Career guidance</title>
+        <title>Jovie - Job Board & Portal HTML Template</title>
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="assetss/img/favicon.png">  
     </head>
@@ -82,13 +94,6 @@ if(isset($_POST['submit'])){
         <!-- Navbar Area Start -->
         <div class="navbar-area">
             <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.html" class="logo">
-                    <img src="assetss/img/logo.png" alt="logo" height="45px">
-                </a>
-            </div>
-        
-            <!-- Menu For Desktop Device -->
             <div class="main-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light">
@@ -98,74 +103,78 @@ if(isset($_POST['submit'])){
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                <a href="index.php" class="nav-link ">Home</a>
+                                    <a href="index-four.html" class="nav-link ">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about.php" class="nav-link">About</a>
+                                    <a href="about.html" class="nav-link">About</a>
                                 </li>     
+                                
                                 <li class="nav-item">
                                     <a href="#" class="nav-link dropdown-toggle">services</a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="events.php" class="nav-link">events</a>
+                                                <a href="company.html" class="nav-link">events</a>
                                             </li>
-                                           
+                                            <li class="nav-item">
+                                                <a href="pricing.html" class="nav-link">Pricing</a>
+                                            </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
                                                 <ul class="dropdown-menu">
                                                     <li class="nav-item">
-                                                        <a href="adv.html" class="nav-link">advisors</a>
+                                                        <a href="account.html" class="nav-link">Account</a>
                                                     </li>
                                                     
                                                     <li class="nav-item">
-                                                        <a href="resg-adv.html" class="nav-link">registration advisor</a>
+                                                        <a href="resume.html" class="nav-link">Resume</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                        
+                                        <li class="nav-item">
+                                            <a href="privacy-policy.html" class="nav-link">courses</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Majors</a>
+                                    <a href="#" class="nav-link dropdown-toggle">Blog</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="majors.php" class="nav-link">Career path</a>
+                                            <a href="blog.html" class="nav-link">Majors</a>
                                         </li>
-                                       <!-- <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">Job titles</a>
-                                        </li>-->
                                         <li class="nav-item">
-                                            <a href="faculty.php" class="nav-link">Faculty</a>
+                                            <a href="blog-two.html" class="nav-link">Blog Two</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="blog-details.html" class="nav-link">Blog Details</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="contact.html" class="nav-link">Contact Us</a>
                                 </li>
-                                </li>
+								
                             </ul>
                             <div class="other-option">
-                                <a href="sign-up.php" class="signup-btn">Sign Up</a>
-                                <a href="sign-in.php" class="signin-btn">Sign In</a>
-                            </div>
-                        </div>
+								<a href="sign-up.html" class="signup-btn">Sign Up</a>
+								<a href="sign-in.html" class="signin-btn">Sign In</a>
+							</div>
                         </div>
                     </nav>
                 </div>
             </div>
         </div>
         <!-- Navbar Area End -->
-        
+
         <!-- Page Title Start -->
-        <section class="page-title title-bg23">
+        <section class="page-title title-bg12">
             <div class="d-table">
                 <div class="d-table-cell">
-                    <h2>Contact Us</h2>
+                    <h2>Sign In</h2>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index-four.html">Home</a>
                         </li>
-                        <li>Contact Us</li>
+                        <li> Advisor Sign In</li>
                     </ul>
                 </div>
             </div>
@@ -177,130 +186,79 @@ if(isset($_POST['submit'])){
         </section>
         <!-- Page Title End -->
 
-        <!-- Contact Section Start -->
-        <div class="contact-card-section ptb-100">
+        <!-- Sign In Section Start -->
+        <div class="signin-section ptb-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="contact-card">
-                                    <i class='bx bx-phone-call'></i>
-                                    <ul>
-                                        <li>
-                                            <a href="tel:+145664474574">
-                                            
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="tel:+0224593597">
-                                                +0224593597
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-4 col-sm-6">
-                                <div class="contact-card">
-                                    <i class='bx bx-mail-send' ></i>
-                                    <ul>
-                                        <li>
-                                        
-                                        </li>
-                                        <li>
-                                            <a href="mailto:LightTrack2023@gmail.com">
-                                                LightTrack2023@gmail.com
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-        
-                            <div class="col-md-4 col-sm-6 offset-sm-3 offset-md-0">
-                                <div class="contact-card">
-                                    <i class='bx bx-location-plus' ></i>
-                                    <ul>
-                                        <li>
-                                            Masr El Gedida, Cairo, Egypt
-                                        </li>
-                                        <li>
-                                         
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact Section End -->
-
-        <!-- Contact Form Start -->
-        <section class="contact-form-section pb-100">
-            <div class="container">
-                <div class="contact-area">
-                    <h3>Lets' Talk With Us</h3>
-                    <form method="POST">
+                    <div class="col-lg-6 col-md-8 offset-md-2 offset-lg-3">
                     <?php if(isset($error)) { ?>
                         <div class="alert alert-danger alert-dismissible fade show w-100 my-3" role="alert">
                             <h5 class="mb-0"><?= $error?></h5>
                             
                         </div>
                         <?php } ?>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+                        <form  method="POST" class="signin-form">
+                            <div class="form-group">
+                                <label> Enter your Email </label>
+                                <input type="text" class="form-control"  name="email" placeholder="enter your email" required>
                             </div>
-                        
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+
+                            <div class="form-group">
+                                <label> Enter your Password </label>
+                                <input type="password" class="form-control"  name="pass" placeholder="enter your password" required>
                             </div>
-        
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="number" name="phone_no" id="phone_no" class="form-control" required data-error="Please enter your number" placeholder="Phone Number">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+
+                            <div class="signin-btn text-center">
+                                <button type="submit" name=submit>Sign In</button>
                             </div>
-        
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="subject" id="subject" class="form-control" required data-error="Please enter your subject" placeholder="Your Subject">
-                                    <div class="help-block with-errors"></div>
-                                </div>
+
+                            <div class="other-signin text-center">
+                                <span>Or sign in with</span>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class='bx bxl-google'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class='bx bxl-facebook'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class='bx bxl-twitter'></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class='bx bxl-linkedin'></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control message-field" id="message" cols="30" rows="7" required data-error="Please type your message" placeholder="Write Message"></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
+
+                            <div class="create-btn text-center">
+                                <p>Not have an account?
+                                    <a href="ad-sign-up.html">
+                                        Create an account
+                                        <i class='bx bx-chevrons-right bx-fade-right'></i>
+                                    </a>
+                                </p>
                             </div>
-                        
-                            <div class="col-lg-12 col-md-12 text-center">
-                                <button type="submit" name="submit" class="default-btn contact-btn">
-                                    Send Message
-                                </button>
-                                <div id="msgSubmit" class="h3 alert-text text-center hidden"></div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>  
                 </div>
             </div>
-        </section>
-        <!-- Contact Form End -->
+        </div>
+        <!-- Sign In Section End -->
+
+        <!-- Subscribe Section Start -->
+       
+        <!-- Subscribe Section End -->
 
         <!-- Footer Section Start -->
-		<footer class="footer-area pt-100 pb-70">
+        <footer class="footer-area pt-100 pb-70">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-sm-6">
@@ -329,13 +287,13 @@ if(isset($_POST['submit'])){
 							<h3>Quick Links</h3>
 							<ul>
 								<li>
-									<a href="index.php">
+									<a href="index-four.html">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Home
 									</a>
 								</li>
 								<li>
-									<a href="about.php">
+									<a href="about.html">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										About
 									</a>
@@ -347,19 +305,19 @@ if(isset($_POST['submit'])){
 									</a>
 								</li>
 								<li>
-									<a href="majors.php">
+									<a href="blog-details.html">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										IT majors
 									</a>
 								</li>
 								<li>
-									<a href="majors.php">
+									<a href="blog-details.html">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										business majors
 									</a>
 								</li>
 								<li>
-									<a href="contact.php">
+									<a href="contact.html">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Contact
 									</a>
@@ -417,7 +375,6 @@ if(isset($_POST['submit'])){
 		<!-- Back To Top End -->
 
 		<!-- jQuery first, then Bootstrap JS -->
-
 		<script src="assetss/js/jquery.min.js"></script>
 		<script src="assetss/js/bootstrap.bundle.min.js"></script>
 		<!-- Owl Carousel JS -->
@@ -436,6 +393,5 @@ if(isset($_POST['submit'])){
 		<script src="assetss/js/meanmenu.js"></script>
 		<!-- Custom JS -->
 		<script src="assetss/js/custom.js"></script>
-
-</body>
+  	</body>
 </html>

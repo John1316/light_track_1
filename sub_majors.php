@@ -43,7 +43,7 @@ require_once('functions/connection.php');
                     <h2>Sub majors</h2>
                     <ul>
                         <li>
-                            <a href="index-four.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>Sub majors</li>
                     </ul>

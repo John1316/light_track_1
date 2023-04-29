@@ -54,7 +54,7 @@
             </div>
 
             <div class="banner-img">
-                <img src="assets/img/home/3.jpg" alt="banner image"width="520px" height="520px">
+                <img src="assetss/img/home/3.jpg" alt="banner image"width="520px" height="520px">
             </div>
         </div>
         <!-- Banner Section End -->
@@ -71,7 +71,7 @@
                <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="discover-img">
-                            <img src="assets/img/home/b3.jpg" alt="discover image" width="485px" height="560px">
+                            <img src="assetss/img/home/b3.jpg" alt="discover image" width="485px" height="560px">
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                                 <p>Look beyond reputation and consider factors such as location, campus culture, and support services. This will help you make an informed decision and set you on the path towards a successful career.</p>
 
                             <div class="theme-btn">
-                                <a href="faculty.html" class="default-btn">
+                                <a href="faculty.php" class="default-btn">
                                     Find About Faculty
                                 </a>
                             </div>
@@ -110,7 +110,7 @@
                                 <div class="col-md-1">
                                     <div class="company-logo">
                                         <a href="https://www.facebook.com/events/609049797584972"></a>
-                                        <img src="assets/img/events/2.jpg" alt="logo" height="55px"width="55px">
+                                        <img src="assetss/img/events/2.jpg" alt="logo" height="55px"width="55px">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -154,7 +154,7 @@
                                 <div class="col-md-1">
                                     <div class="company-logo">
                                         <a href="job-details.html"></a>
-                                        <img src="assets/img/events/3.jpg" alt="logo"height="55px"width="55px">
+                                        <img src="assetss/img/events/3.jpg" alt="logo"height="55px"width="55px">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -201,7 +201,7 @@
                                 <div class="col-md-1">
                                     <div class="company-logo">
                                         <a href="https://career-180.com/en/events/ecs-2023/register"></a>
-                                        <img src="assets/img/events/4.png" alt="logo">
+                                        <img src="assetss/img/events/4.png" alt="logo">
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -264,7 +264,7 @@
             </div>
 
             <div class="browse-job-img">
-                <img src="assets/img/home/1.jpg" alt="mobile image" height="400px" width="360">
+                <img src="assetss/img/home/1.jpg" alt="mobile image" height="400px" width="360">
             </div>
         </section>
         <!-- Apps Section End -->
@@ -322,7 +322,7 @@
 
                     <div class="col-lg-6">
                         <div class="how-works-img">
-                            <img src="assets/img/home/4.jpg" alt="how works">
+                            <img src="assetss/img/home/4.jpg" alt="how works">
                         </div>
                     </div>
                 </div>
@@ -348,20 +348,20 @@
 						<div class="blog-card">
 							<div class="blog-img">
 								<a href="tips-success.html">
-									<img src="assets/img/blog/5.jpg" alt="blog image">
+									<img src="assetss/img/blog/5.jpg" alt="blog image">
 								</a>
 							</div>
 							<div class="blog-text">
 								
 
 								<h3>
-									<a href="tips-success.html">
+									<a href="tips-success.php">
 										Tips For Success That Will Help You Accomplish Your Career Goals
 									</a>
 								</h3>
 								<p>These seven tips for success can help anyone advance their career and find fulfillment in their personal life.</p>
 
-								<a href="tips-success.html" class="blog-btn">
+								<a href="tips-success.php" class="blog-btn">
 									Read More
 									<i class='bx bx-plus bx-spin'></i>
 								</a>
@@ -373,12 +373,12 @@
 						<div class="blog-card">
 							<div class="blog-img">
 								<a href="job-student.html">
-									<img src="assets/img/blog/4.jpg" alt="blog image">
+									<img src="assetss/img/blog/4.jpg" alt="blog image">
 								</a>
 							</div>
 							<div class="blog-text">
 								<h3>
-									<a href="job-student.html">
+									<a href="job-student.php">
 										How to Work While Still In College
 									</a>
 								</h3>
@@ -386,7 +386,7 @@
 									College students in Egypt have part-time job options. Balance work and studies by prioritizing, communicating, being realistic, and scheduling
 								</p>
 
-								<a href="job-student.html" class="blog-btn">
+								<a href="job-student.php" class="blog-btn">
 									Read More
 									<i class='bx bx-plus bx-spin'></i>
 								</a>

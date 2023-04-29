@@ -45,9 +45,9 @@
 						Events</h2>
                     <ul>
                         <li>
-                            <a href="index-four.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
-                        <li>events</li>
+                       
                     </ul>
                 </div>
             </div>

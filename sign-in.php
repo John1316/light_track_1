@@ -54,7 +54,7 @@
 							
 							<i class='flaticon-user'></i>
 							<div class="theme-btn">
-                                <a href="us-sign-in.php" class="default-btn active">As User</a>
+                                <a href="signin_user.php" class="default-btn active">As User</a>
                                 
 							</div>
 					</div>
@@ -65,7 +65,7 @@
 							
 							<i class='flaticon-consultation'></i>
 							<div class="theme-btn">
-                                <a href="ad-sign-in.php" class="default-btn active">AS Advisor</a>
+                                <a href="signin_advisor.php" class="default-btn active">AS Advisor</a>
                                 
 							</div>
 					</div>
