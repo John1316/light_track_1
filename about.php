@@ -123,7 +123,7 @@ require_once('functions/connection.php');
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
+                                    <a href="contact.php" class="nav-link">Contact Us</a>
                                 </li>
                                 </li>
                             </ul>
@@ -147,7 +147,7 @@ require_once('functions/connection.php');
                     <h2>About Us</h2>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>About Us</li>
                     </ul>

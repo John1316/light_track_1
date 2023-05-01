@@ -114,7 +114,7 @@ if (!isset($_SESSION['admin_id'])) {
                                                         <td><?php echo $result['soft_skills'] ?></td>
 
                                                         <td><?php echo  substr($result['technical_skills'], 0, 100); ?></td>
-
+                                                        
                                                         <td><?php echo $result['average_salary'] ?></td>
 
                                                         <td><?php echo substr($result['courses'], 0, 100); ?></td>

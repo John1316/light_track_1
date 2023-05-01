@@ -6,7 +6,7 @@
 						<div class="footer-widget">
 							<div class="footer-logo">
 								<a href="index.html">
-									<img src="assets/img/logo.png" alt="logo">
+									<img src="assetss/img/logo.png" alt="logo">
 								</a>
 							</div>
 
@@ -28,13 +28,13 @@
 							<h3>Quick Links</h3>
 							<ul>
 								<li>
-									<a href="index-four.html">
+									<a href="index.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Home
 									</a>
 								</li>
 								<li>
-									<a href="about.html">
+									<a href="about.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										About
 									</a>
@@ -46,19 +46,19 @@
 									</a>
 								</li>
 								<li>
-									<a href="blog-details.html">
+									<a href="majors.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										IT majors
 									</a>
 								</li>
 								<li>
-									<a href="blog-details.html">
+									<a href="majors.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										business majors
 									</a>
 								</li>
 								<li>
-									<a href="contact.html">
+									<a href="contact.php">
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										Contact
 									</a>

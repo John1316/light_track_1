@@ -180,7 +180,7 @@ require_once('functions/connection.php');
 									
 								</h3>
 
-								<a href="sub_majors.php?major_id=<?php echo $result['faculty_id'] ?>" class="blog-btn">
+								<a href="faculty_majors.php?faculty_id=<?php echo $result['faculty_id'] ?>" class="blog-btn">
 									Read More
 									<i class='bx bx-plus bx-spin'></i>
 								</a>
