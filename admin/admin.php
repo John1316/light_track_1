@@ -202,10 +202,11 @@
 
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
+    
 
-    <?php include('includes/footer.php') ?>
+    <?php include('includes/footeer.php') ?>
 
- <?php include('includes/scripts.php') ?>
+    <?php include('includes/scripts.php') ?>
 
 
 </body>

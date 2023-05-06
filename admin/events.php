@@ -80,8 +80,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>Event ID</th>
-                                                    <th>Event Name</th>
                                                     <th>Event Link</th>
+                                                    <th>Introducrion</th>
                                                     <th>Event Image</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -98,10 +98,9 @@
                                                 ?>
                                                 <tr>
                                                     <td class="text-bold-500">#<?php echo $result['event_id'] ?></td>
-                                                    <td><?php echo $result['event_name'] ?></td>
                                                     <td><?php echo $result['event_link'] ?></td>
-                                                    <!-- <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['event_image']; ?>" alt=""></td> -->
-                                                    <td><?php echo $result['event_image']; ?></td>
+                                                    <td><?php echo $result['introduction'] ?></td>
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['event_image']; ?>" alt=""></td> 
                                                     <td class="d-flex">
 
 
@@ -133,6 +132,13 @@
                                                                         <div class="form-group">
                                                                             <label for="name">Event Name</label>
                                                                             <input id="name" class="form-control" value="<?php echo $result['event_name'] ?>" type="text" name="event_name" required>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="col-12">
+                                                                        <div class="form-group">
+                                                                            <label for="name">Indroduction</label>
+                                                                            <input id="name" class="form-control" value="<?php echo $result['introduction'] ?>" type="text" name="introduction" required>
                                                                         </div>
                                                                     </div>
                                                                     
@@ -189,12 +195,17 @@
                     <div class="row">
                        
                         <div class="col-12">
-                            <div class="form-group">
-                                <label for="event_name">Event Name</label>
-                                <input id="event_name" class="form-control" type="text" name="event_name" required>
+                                <div class="form-group">
+                                    <label for="event_name">Event Name</label>
+                                    <input id="event_name" class="form-control" type="text" name="event_name" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="event_name">Introduction</label>
+                                    <input id="introduction" class="form-control" type="text" name="introduction" required>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="event_image">Event Image</label>
                                 <input id="event_image" class="form-control" type="file" name="event_image" >
@@ -223,7 +234,7 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
-    <?php include('includes/footer.php') ?>
+    <?php include('includes/footeer.php') ?>
 
 
  <?php include('includes/scripts.php') ?>

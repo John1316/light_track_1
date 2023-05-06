@@ -271,10 +271,10 @@ h3 {
 }
 
 .navbar-brand img {
-  height: 70px;
+  height: 100px;
   }
   @media screen and (max-width: 660px){
-    .navbar-brand img{ height: 10px!important;
+    .navbar-brand img{ height: 100px!important;
  }
  }
 

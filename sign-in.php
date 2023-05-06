@@ -33,7 +33,7 @@
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header.php') ?> 
+		<?php include('includes/header_1.php') ?> 
 
         <!-- Navbar Area End -->
 

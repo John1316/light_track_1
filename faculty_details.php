@@ -1,6 +1,6 @@
 <?php
     require_once('functions/connection.php');
-    include('functions/details.php');
+    include('functions/f_details.php');
 ?>
 
 <!doctype html>
@@ -41,13 +41,15 @@
         <section class="page-title title-bg22" >
             <div class="d-table">
                 <div class="d-table-cell">
-                    <h2><?php echo $result_details['title'] ?></h2>
+                    <h2><?php echo $result_details['name'] ?></h2>
                     <ul>
                         <li>
                             <a href="index.php">Home</a>
                         </li>
-                        <li><?php echo $result_details['title'] ?></li><!--8yrha business major lw 3aml 7aga lel search-->
+                        <li><?php echo $result_details['name'] ?></li><!--8yrha business major lw 3aml 7aga lel search-->
                     </ul>
+                    <!-- <p><?php echo $result_details['description'] ?></p> -->
+
                 </div>
             </div>
             <div class="lines">

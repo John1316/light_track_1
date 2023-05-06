@@ -63,88 +63,17 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.php" class="logo">
-                    <img src="assetss/img/logo.png" alt="logo" height="45px">
-                </a>
-            </div>
-        
-            <!-- Menu For Desktop Device -->
-            <div class="main-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index-four.html">
-                            <img src="assetss/img/logo.png" alt="logo" class="img-fluid">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                <a href="index.php" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.php" class="nav-link">About</a>
-                                </li>     
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">services</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="events.php" class="nav-link">Events</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="nav-item">
-                                                        <a href="adv.html" class="nav-link">advisors</a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="resg-adv.html" class="nav-link">registration advisor</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Majors</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="majors.php" class="nav-link">Career path</a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">Job titles</a>
-                                        </li> -->
-                                        <li class="nav-item">
-                                            <a href  ="faculty.php" class="nav-link">Faculty</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.php" class="nav-link">Contact Us</a>
-                                </li>
-                            </ul>
-                            <div class="other-option">
-                                <a href="sign-up.php" class="signup-btn">Sign Up</a>
-                                <a href="sign-in.php" class="signin-btn">Sign In</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar Area End -->
+		<?php include('includes/header_1.php') ?>
 <!-- Page Title Start -->
 <section class="page-title title-bg23" >
     <div class="d-table">
         <div class="d-table-cell">
-            <h2>Faculty</h2>
+            <h2>Faculties</h2>
             <ul>
                 <li>
-                    <a href="index-four.html">Home</a>
+                    <a href="home.php">Home</a>
                 </li>
-                <li>Faculty</li><!--8yrha business major lw 3aml 7aga lel search-->
+                <li>Faculties</li><!--8yrha business major lw 3aml 7aga lel search-->
             </ul>
         </div>
     </div>
@@ -160,7 +89,8 @@ require_once('functions/connection.php');
 			<div class="container">
 				<div class="section-title text-center">
 					<h2>Select faculty</h2>
-					<p>Selecting the faculty you are need more information about it.</p>
+					<p> While choosing the right faculty is crucial for one's career path, it does not limit their potential to shift to another field in the future. Life is full of opportunities and possibilities, and one can always explore different options and make a career change if needed.
+                            </p>
 				</div>
 
 				<div class="row">
@@ -174,7 +104,11 @@ require_once('functions/connection.php');
 							
 							<div class="blog-text">
 							
+                            <a href="faculty_majors.php?faculty_id=<?php echo $result['faculty_id'] ?>" class="blog-btn">
+									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
+                                </a>
 
+								<h3>
 								<h3>
 									<?php echo $result['name'] ?>
 									
@@ -190,9 +124,9 @@ require_once('functions/connection.php');
 					<?php
 					}
 					?>
-
+        <!--
                 <div class="blog-widget">
-                    <h3>Popular Post</h3><!--dih 7od fihaa courses aw links lel other blogs-->
+                    <h3>Popular Post</h3> dih 7od fihaa courses aw links lel other blogs
 
                     <article class="popular-post">
                         <a href="blog-details.html" class="blog-thumb">
@@ -218,7 +152,7 @@ require_once('functions/connection.php');
                                 <a href="blog-details.html">
                                     How to Indroduce in Yourself in Job Interview?
                                 </a>
-                            </h4>                                
+                            </h4>                               
                         </div>
                     </article>
 
@@ -261,41 +195,16 @@ require_once('functions/connection.php');
             </div>
                 <div class="col-lg-8">
                     <div class="blog-dedails-text">
-                        <div class="blog-details-img"><!--7ot soura liha 3elaka bl it aw business-->
+                        <div class="blog-details-img"> 7ot soura liha 3elaka bl it aw business
                             <img src="assetss/img/blog/faculty1.jpg" alt="blog details image"  height="400">
                         </div>
-
+                -->
                         
                             
-                <h3 class="post-title">Faculty</h3>
-              <!--mt8yrsh el p dh-->  <p>The transition from high school to college is also significant as it marks a student's entry into adulthood and independence. College provides students with a platform to explore and discover their interests, develop critical thinking skills, and prepare for their future careers.</p>
-                            <h5>> Name of faculty</h5><!--tt8yr b esm el faculty-->
-                                <h5 >>Description :</h5><!--dih sbtha wli t7tha yt8yr 3ala 7sb el jobw yb2a diha desc lkol job titles-->
-                            <p>
-                            <!--decription of faculty--> There can be differences in the education and degree requirements for different software developer/engineer job titles, depending on the company and the specific role. Here's a general overview of the education and degree requirements for some of the job titles you listed <a href="college.html" class="link-danger"> know more about college degrees</a>:
-                            </p>
-
-                            <h5>>Job fields:</h5>
-                            <p> <!--job field-->
-                             <!--mt8yrsh el p dh-->   While choosing the right faculty is crucial for one's career path, it does not limit their potential to shift to another field in the future. Life is full of opportunities and possibilities, and one can always explore different options and make a career change if needed.
-                            </p>
-                            <p>
-                                <br><b>1. Full Stack Developer:</b> Full stack developers are increasingly in demand due to their ability to work on both front-end and back-end technologies. With the rise of web applications and the need for complex web development projects, full stack developers are becoming more essential in the tech industry.
-                                
-                                <br><b>2. DevOps Engineer:</b> DevOps engineers are in high demand due to the increasing adoption of cloud computing and agile software development methodologies. They are responsible for building and maintaining the infrastructure that supports software development and deployment, and ensuring that software can be delivered quickly and reliably.
-                                
-                                <br><b>3. Cybersecurity Specialist:</b> With the increasing frequency and sophistication of cyber attacks, the demand for cybersecurity specialists continues to grow. Professionals with skills in network security, threat detection, and incident response are particularly in demand.
-                                
-                                <br><b> 4. Data Analyst/Scientist:</b> With the explosion of data in recent years, the demand for data analysts and data scientists continues to grow. Professionals with skills in data analysis tools such as Excel, Python, and R, as well as data visualization tools such as Tableau and Power BI, are particularly in demand.
-                                
-                                <br><b> 5. Mobile Application Developer:</b> With the increasing use of mobile devices and the rise of mobile applications, the demand for mobile application developers continues to grow. Professionals with skills in mobile development platforms such as iOS and Android, as well as experience with mobile app development frameworks such as React Native or Xamarin, are particularly in demand.
-                                
-                                <br> Again, it's important to note that the demand for specific software developer/engineer job titles can vary depending on the industry and economic conditions. However, these job titles have been identified as some of the most in-demand in recent years.
-                            </p>
-
+                
                                 
 
-                </div></div></div></section>
+                </div></div></div></section> 
 
 
 <!-- Footer Section Start -->

@@ -178,7 +178,7 @@ require_once('functions/connection.php');
 
                             <div class="col-lg-3">
                                 <div class="job-save">
-                                    <span><a href="resg-adv.html "class='link-danger'>Book Now</a></span>
+                                    <span><a href="resg-adv.php "class='link-danger'>Book Now</a></span>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +222,7 @@ require_once('functions/connection.php');
 
                             <div class="col-lg-3">
                                 <div class="job-save">
-                                    <span><a href="resg-adv.html "class='link-danger'>Book Now</a></span>
+                                    <span><a href="resg-adv.php "class='link-danger'>Book Now</a></span>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +234,7 @@ require_once('functions/connection.php');
                         <div class="row align-items-center">
                             <div class="col-lg-3">
                                 <div class="thumb-img">
-                                    <a href="job-details.html">
+                                    <a href="job-details.php">
                                         <img src="assets/img/company-logo/1.png" alt=" advisor photo">
                                     </a>
                                 </div>

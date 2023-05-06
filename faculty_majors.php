@@ -33,7 +33,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header.php') ?>
+		<?php include('includes/header_1.php') ?>
 
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
@@ -82,7 +82,7 @@ require_once('functions/connection.php');
 									
 								</h3>
 
-								<a href="job_titles.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
+								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
 									Read More
 									<i class='bx bx-plus bx-spin'></i>
 								</a>

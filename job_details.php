@@ -36,7 +36,7 @@
 		<!-- Pre-loader End -->
 
 
-        <?php include('includes/header.php') ?>
+        <?php include('includes/header_1.php') ?>
         <!-- Page Title Start -->
         <section class="page-title title-bg22" >
             <div class="d-table">
@@ -167,10 +167,7 @@
                         </div>
 
                     </div>
-                          <?php
-
-                          $jobs = "SELECT * from `faculties`";
-                          ?>
+                        
                     <div class="col-lg-8">
                         <div class="blog-dedails-text">
                             <div class="blog-details-img"><!--7ot soura liha 3elaka bl it aw business-->
@@ -196,14 +193,15 @@
                              <p><?php echo $result_details['description'] ?></p>
 
 
-                            <div class="row"><!--7ot swr liha 3elaka bl job-->
+                         <!--    <div class="row">   7ot swr liha 3elaka bl job
                                 <div class="col-sm-6">
                                     <img src="assets/img/blog/blog-details2.jpg" class="details-inner-img" alt="blog details image">
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="assets/img/blog/blog-details3.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                            </div>
+                                </div> 
+                            </div> 
+                            -->
 
                             <h5>SOFT SKILLS</h5>
                              <p><?php echo $result_details['soft_skills'] ?></p>
@@ -217,7 +215,7 @@
                             <h5>Courses</h5>
                              <p><?php echo $result_details['courses'] ?></p>
                             
-                           ?>
+                         
 
                             
                             <h5>SOFT SKILLS</h5>
@@ -278,14 +276,14 @@
                         </div>
 
 
-                            <div class="row">
+                          <!--  <div class="row">
                                 <div class="col-sm-6">
                                     <img src="assets/img/blog/blog-details2.jpg" class="details-inner-img" alt="blog details image">
                                 </div>
                                 <div class="col-sm-6">
                                     <img src="assets/img/blog/blog-details3.jpg" class="details-inner-img" alt="blog details image">
                                 </div>
-                            </div>
+                            </div> -->
                             <br>
                             <h5>>Related Courses</h5>
 

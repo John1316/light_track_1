@@ -33,7 +33,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header.php') ?>
+		<?php include('includes/header_1.php') ?>
 
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
@@ -73,13 +73,16 @@ require_once('functions/connection.php');
 					?>
 					<div class="col-lg-4 col-sm-6">
 						<div class="blog-card">
-							
 							<div class="blog-text">
-							
+							<a  href="sub_majors.php?major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
+									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
+                                </a>
 
 								<h3>
-									<?php echo $result['title'] ?>
 									
+								<td width='80' style='text-align:center;'>
+									<?php echo $result['title'] ?>
+					           </td>
 								</h3>
 
 								<a href="sub_majors.php?major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
