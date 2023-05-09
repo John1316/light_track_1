@@ -62,111 +62,7 @@
         <section class="blog-details-area ptb-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="blog-widget blog-search">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <button>
-                                        <i class='bx bx-search-alt-2'></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="blog-widget">
-                            <h3>Popular Post</h3><!--dih 7od fihaa courses aw links lel other blogs-->
-
-                            <article class="popular-post">
-                                <a href="blog-details.html" class="blog-thumb">
-                                    <img src="assets/img/blog/popular-post1.jpg" alt="blog image">
-                                </a>
-
-                                <div class="info">
-                                    <time datetime="2021-04-08">May 8, 2021</time>
-                                    <h4>
-                                        <a href="blog-details.html">Looking for Highly Motivated Product to Build</a>
-                                    </h4>                                
-                                </div>
-                            </article>
-
-                            <article class="popular-post">
-                                <a href="blog-details.html" class="blog-thumb">
-                                    <img src="assets/img/blog/popular-post2.jpg" alt="blog image">
-                                </a>
-
-                                <div class="info">
-                                    <time datetime="2021-04-08">May 5, 2021</time>
-                                    <h4>
-                                        <a href="blog-details.html">
-                                            How to Indroduce in Yourself in Job Interview?
-                                        </a>
-                                    </h4>                                
-                                </div>
-                            </article>
-
-                            <article class="popular-post">
-                                <a href="blog-details.html" class="blog-thumb">
-                                    <img src="assets/img/blog/popular-post3.jpg" alt="blog image">
-                                </a>
-
-                                <div class="info">
-                                    <time datetime="2021-04-08">April 20, 2021</time>
-                                    <h4>
-                                        <a href="blog-details.html">
-                                            most wanted IT careers
-                                        </a>
-                                    </h4>                                
-                                </div>
-                            </article>
-
-                            <article class="popular-post">
-                                <a href="blog-details.html" class="blog-thumb">
-                                    <img src="assets/img/blog/popular-post4.jpg" alt="blog image">
-                                </a>
-
-                                <div class="info">
-                                    <time datetime="2021-04-08">April 28, 2021</time>
-                                    <h4>
-                                        <a href="blog-details.html">
-                                            highest salary out of all it majors
-                                        </a>
-                                    </h4>                                
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="blog-widget blog-category">
-                            <h3>number of job titles under each It career</h3>
-                            <ul>
-                                <li>
-                                    <a href="#">Software Developer/Engineer</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="#">It Project Manager</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Cybersecurity Specialist:</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Data Analyst/Scientis</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Cloud Architect/Engineer</a>
-                                    <span>(7)</span>
-                                </li>
-                                <li>
-                                    <a href="#">Digital Marketing</a>
-                                    <span>(10)</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
+                    <!-- -->
 
                     <div class="col-lg-8">
                         <div class="blog-dedails-text">
@@ -188,7 +84,7 @@
                             </div>
 
                             <h3 class="post-title"><?php echo $result_details['title'] ?></h3><!--dih mmkn tt8yr business-->
-                            <h5>key differences between</h5>
+                            <h5>Description</h5>
 
                              <p><?php echo $result_details['description'] ?></p>
 
@@ -202,21 +98,9 @@
                                 </div>
                             </div>
 
-                            <h5 id="avg-salary">>Average Salary Of Each Job Titles:</h5><!--salary -->
+                            <h5 id="avg-salary">Technical skills:</h5><!--salary -->
                             <p>
-                                It's difficult to say which software developer/engineer job title is the most in demand, as the demand for these roles can vary depending on the industry, location, and company. However, according to various industry reports and job market analyses, some of the most in-demand software developer/engineer job titles in recent years have been:
-
-                                <br><b>1. Full Stack Developer:</b> Full stack developers are increasingly in demand due to their ability to work on both front-end and back-end technologies. With the rise of web applications and the need for complex web development projects, full stack developers are becoming more essential in the tech industry.
-                                
-                                <br><b>2. DevOps Engineer:</b> DevOps engineers are in high demand due to the increasing adoption of cloud computing and agile software development methodologies. They are responsible for building and maintaining the infrastructure that supports software development and deployment, and ensuring that software can be delivered quickly and reliably.
-                                
-                                <br><b>3. Cybersecurity Specialist:</b> With the increasing frequency and sophistication of cyber attacks, the demand for cybersecurity specialists continues to grow. Professionals with skills in network security, threat detection, and incident response are particularly in demand.
-                                
-                                <br><b> 4. Data Analyst/Scientist:</b> With the explosion of data in recent years, the demand for data analysts and data scientists continues to grow. Professionals with skills in data analysis tools such as Excel, Python, and R, as well as data visualization tools such as Tableau and Power BI, are particularly in demand.
-                                
-                                <br><b> 5. Mobile Application Developer:</b> With the increasing use of mobile devices and the rise of mobile applications, the demand for mobile application developers continues to grow. Professionals with skills in mobile development platforms such as iOS and Android, as well as experience with mobile app development frameworks such as React Native or Xamarin, are particularly in demand.
-                                
-                                <br> Again, it's important to note that the demand for specific software developer/engineer job titles can vary depending on the industry and economic conditions. However, these job titles have been identified as some of the most in-demand in recent years.
+                            <?php echo $result_details['technical_skills'] ?>
                             </p>
 
                             <h5>>Responsbility Of Each Job Titles:</h5>
