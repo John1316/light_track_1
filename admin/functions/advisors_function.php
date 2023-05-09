@@ -2,7 +2,7 @@
 if(isset($_POST['delete_advisor'])){
     $id = $_POST['advisor_id'];
 
-    $hide_advisors = "UPDATE `advisors` SET `Status` =0 where advisor_id ='$id'";
+    $hide_advisors = "DELETE `advisors` SET `Status` =0 where advisor_id ='$id'";
 
     $delete_query =mysqli_query($con, $hide_advisors) or die('Error in delete'.mysqli_error($con));
     if(!$delete_query){

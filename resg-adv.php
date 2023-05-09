@@ -1,5 +1,27 @@
 <?php
 require_once('functions/connection.php');
+
+
+if(isset($_POST['submit'])){
+    $user_id = $_POST['user_id'];
+    $advisor_id = $_POST['advisor_id'];
+    $session_field = $_POST['session_field'];
+    $session_field = $_POST['email'];
+    $preferred_date = $_POST['preferred_date'];
+    $preferred_time = $_POST['preferred_time'];
+    $screenshot = $_POST['screenshot'];
+    $session_fees = $_POST['session_fees'];
+    $status = $_POST['status'];
+
+    $insert_consultation = "INSERT INTO `consultations` (`user_id`, `advisor_id`, `session_field`,`email`, `preferred_date`, `preferred_time`, `screenshot`, `session_fees`, `status`) VALUES ('$user_id', '$advisor_id', '$session_field','$email', '$preferred_date', '$preferred_time', '$screenshot', '$session_fees', '$status')";
+    $consultation_query = mysqli_query($con, $insert_consultation) or die('Error in insert'.mysqli_error($con));
+
+    if(!$consultation_query){
+        die('Error in insert'.mysqli_error($con));
+    }else{
+        $inserted = "Consultation added successfully";
+    }
+}
 ?>
 <!doctype html>
 <html lang="zxx">
@@ -70,73 +92,8 @@ require_once('functions/connection.php');
             </div>
         
             <!-- Menu For Desktop Device -->
-            <div class="main-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/img/logo.png" alt="logo" class="img-fluid">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="index-four.html" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About</a>
-                                </li>     
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">services</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="events.html" class="nav-link">events</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="courses.html" class="nav-link">courses</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="nav-item">
-                                                        <a href="adv.html" class="nav-link">advisors</a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="resg-adv.html" class="nav-link">registration advisor</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Majors</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">Career path</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">Job titles</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="faculty.html" class="nav-link">Faculty</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
-                                </li>
-                                </li>
-                            </ul>
-                            <div class="other-option">
-                                <a href="sign-up.html" class="signup-btn">Sign Up</a>
-                                <a href="sign-in.html" class="signin-btn">Sign In</a>
-                            </div>
-                        </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+            <?php include('includes/header_1.php') ?>
+
         <!-- Navbar Area End -->
 <!-- Page Title Start -->
 <section class="page-title title-bg3">
@@ -145,7 +102,7 @@ require_once('functions/connection.php');
             <h2>Reservation Consultation</h2>
             <ul>
                 <li>
-                    <a href="index-four.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li>Reservation Consultation</li>
             </ul>
@@ -174,44 +131,64 @@ require_once('functions/connection.php');
                         <div class="row align-items-center">
                         <div class="form-group">
                             
-                            <div class="col-md-12">
+                            
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" id="exampleInput2" placeholder="Enter Your Name" required>
+                            <input type="text" class="form-control" id="exampleInput2" name="user_id" placeholder="Enter Your Name" required>
                         </div>
                     </div>
                     
+                            
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Enter Your Email</label>
-                            <input type="email" class="form-control" id="exampleInput3" name="email" placeholder="e.g. hello@company.com" required>
+                            <label>Email</label>
+                            <input type="text" class="form-control" id="exampleInput2" name="email" placeholder="Enter Your Email" required>
                         </div>
                     </div>
+                    
                     
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Enter date of the consultation</label>
-                            <input type="date" class="form-control" id="exampleInput3" name="date"  required>
+                            <input type="date" class="form-control" id="exampleInput3" name="preferred_date"  required>
                         </div>
                     </div>
 
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>choose time </label>
-                            <input type="time" class="form-control" id="exampleInput2" name="time" required>
+                            <input type="time" class="form-control" id="exampleInput2" name="preferred_time" required>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Screenshot of payment</label>
+                            <input type="text" class="form-control" id="exampleInput2" name="screenshot" required>
                         </div>
                     </div> 
 
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Job Category</label>
-                            <select class="category">
-                                <option data-display="Category">Category</option>
-                                <option value="1">IT</option>
-                                <option value="2">Business</option>
-                            </select>
-                        </div>
-                    </div>
+                    <div class="col-12">
+                                <div class="form-group">
+                                    <label for="sub_id">Sub Majors</label>
+                                    <select id="sub_id" class="form-control" type="text" name="sub_id" required>
+                                        <option value="">Select sub major</option>
+                                        <?php
+                                        $sub_majors = "SELECT * FROM sub_majors";
+                                        $sub_majors_query = mysqli_query($con, $sub_majors) or die('sub_majors_error' . mysqli_error($con));
+
+
+                                        while ($sub_majors_result = mysqli_fetch_array($sub_majors_query)) {
+
+
+                                        ?>
+                                            <option value="<?php echo $sub_majors_result['sub_id'] ?>"><?php echo $sub_majors_result['title'] ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
 
                     
 

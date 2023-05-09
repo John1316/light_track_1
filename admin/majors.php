@@ -10,38 +10,7 @@
 <!-- BEGIN: Head-->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta title="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta title="description" content="Frest admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta title="keywords" content="admin template, Frest admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta title="author" content="PIXINVENT">
-    <title>Bootstrap Tables - Frest - Bootstrap HTML admin template</title>
-    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
-
-    <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
-    <!-- END: Vendor CSS-->
-
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
-    <!-- END: Theme CSS-->
-
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
-    <!-- END: Page CSS-->
-
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <!-- END: Custom CSS-->
-
+<?php include('includes/head.php') ?>
 </head>
 <!-- END: Head-->
 
@@ -111,6 +80,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>NAME</th>
+                                                    <th>IMAGE</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -127,6 +97,8 @@
                                                 <tr>
                                                     <td class="text-bold-500">#<?php echo $result['major_id'] ?></td>
                                                     <td><?php echo $result['title'] ?></td>
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['image']; ?>" alt=""></td>
+
                                                     <td class="d-flex">
 
 
@@ -150,14 +122,20 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form method="POST">
+                                                            <form method="POST" enctype="multipart/form-data">
                                                             <div class="row">
                                                             <input type="hidden" name="major_id" id="major_id" value="<?php echo $result['major_id'] ?>">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label for="title">Title</label>
-                                                                        <input id="title" class="form-control" name="title" value="<?php echo $result['title'] ?>" type="text" required>
+                                                                        <label for="title">Name</label>
+                                                                        <input id="title" class="form-control" name="title" value="<?php echo $result['title'] ?>" type="text" >
                                                                     </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                 <div class="form-group">
+                                                                    <label for="image">Image</label>
+                                                                    <input id="image" class="form-control" type="file" name="image" >
+                                                                 </div>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
@@ -195,14 +173,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="title">Name</label>
                                 <input id="title" class="form-control" type="text" name="title" required>
                             </div>
                         </div>
+
+                        <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input id="image" class="form-control" type="file" name="image">
+                                </div>
+                            </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" name="add_majors" class="btn btn-primary">Add major</button>
@@ -218,11 +203,7 @@
     <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-left d-inline-block">2023 &copy;Light Track</span><span class="float-right d-sm-inline-block d-none">Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Light Track</a></span>
-            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
-        </p>
-    </footer>
+    <?php include('includes/footeer.php') ?>
     <!-- END: Footer-->
 
 

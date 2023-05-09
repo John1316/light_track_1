@@ -5,8 +5,12 @@ if(isset($_POST['add_fauclty_major'])){
     // $major = $_POST['major'];
     $description = $_POST['description'];
     $job_fields = $_POST['job_fields'];
+    $image_name = time() . '-' . $_FILES['image']['name'];
+    $image_dirction = '../images/';
+    $image_target = $image_dirction . basename($image_name);
+    move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
 
-    $insert_major = "INSERT INTO `faculty_majors` (`name`,`faculty_id`,`description`,`job_fields`) Values ('$name','$faculty_id','$description','$job_fields') ";
+    $insert_major = "INSERT INTO `faculty_majors` (`name`,`faculty_id`,`description`,`job_fields`,`image`) Values ('$name','$faculty_id','$description','$job_fields','$image_name') ";
     $faculty_query = mysqli_query($con, $insert_major) or die('Error in insert'.mysqli_error($con));
 
     if(!$faculty_query){
@@ -35,11 +39,17 @@ if(isset($_POST['update_major'])){
     $name = $_POST['name'];
     $description=$_POST['description'];
     $job_fields=$_POST['job_fields'];
-
-    $update_faculty = "UPDATE `faculty_majors` SET `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields' WHERE `major_id`='$id' ";
-   
-
-    $update_query =mysqli_query($con, $update_faculty) or die('Error in update'.mysqli_error($con));
+    $image_name = time() . '-' . $_FILES['image']['name'];
+    $image_dirction = '../images/';
+    $image_target = $image_dirction . basename($image_name);
+    move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
+    if(empty($_FILES['image']['name'])){
+        $update_faculty = "UPDATE `faculty_majors` SET  `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields' WHERE `major_id`='$id' ";
+        $update_query =mysqli_query($con, $update_faculty) or die('Error in update'.mysqli_error($con));
+    }else{
+        $update_faculty = "UPDATE `faculty_majors` SET `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields',`image`='$image_name' WHERE `major_id`='$id' ";
+        $update_query =mysqli_query($con, $update_faculty) or die('Error in update'.mysqli_error($con));
+    }
     if(!$update_query){
         die('Error in update'.mysqli_error($con));
     }else{

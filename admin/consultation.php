@@ -83,6 +83,7 @@
                                                 <th>#</th>
                                                 <th>User Name</th>
                                                 <th>Advisor Name</th>
+                                                <th>Email</th>
                                                 <th>Session Field</th>
                                                 <th>Preferred Date</th>
                                                 <th>Preferred Time</th>
@@ -94,7 +95,7 @@
 
                                             <tbody>
                                             <?php 
-                                                $consultation = "SELECT consultations.consultation_id, consultations.user_id ,  advisors.advisor_id, advisors.name as advisor_name, CONCAT(users.first_name, ' ', users.last_name) as user_name, consultations.session_field, consultations.preferred_date, consultations.preferred_time, consultations.screenshot, consultations.session_fees, consultations.status 
+                                                $consultation = "SELECT consultations.consultation_id, consultations.user_id ,  advisors.advisor_id, advisors.name as advisor_name, CONCAT(users.first_name, ' ', users.last_name) as user_name, consultations.session_field,  consultations.email, consultations.preferred_date, consultations.preferred_time, consultations.screenshot, consultations.session_fees, consultations.status 
                                                 FROM consultations 
                                                 INNER JOIN users ON users.user_id = consultations.user_id 
                                                 INNER JOIN advisors ON advisors.advisor_id = consultations.advisor_id;";  
@@ -105,7 +106,8 @@
                                                     <td class="text-bold-500">#<?php echo $result['consultation_id'] ?></td>
                                                     <td><?php echo $result['user_name'] ?></td>
                                                     <td><?php echo $result['advisor_name'] ?></td>  
-                                                    <td><?php echo $result['session_field'] ?></td>  
+                                                    <td><?php echo $result['email'] ?></td>
+                                                    <td><?php echo $result['session_field'] ?></td>    
                                                     <td style= "white-space:nowrap;text-overflow: ellipsis;
                                                     overflow: hidden;"  class="text-bold-500"><?php echo $result['preferred_date'] ?></td>
                                                     <td><?php echo $result['preferred_time'] ?></td>  
@@ -164,10 +166,24 @@
                                                                                 </select>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-12">
+                                                                                                                        <div class="col-12">
                                                                             <div class="form-group">
                                                                                 <label for="session_field">Session Field</label>
-                                                                                <input id="session_field" class="form-control" value="<?php echo $result['session_field'] ?>" type="text" name="session_field" required>
+                                                                                <select id="session_field" class="form-control" name="session_field" required>
+                                                                                    <option value="">Select a sub-major</option>
+                                                                                    <?php
+                                                                                    $sub_majors_query = mysqli_query($con, "SELECT sub_id, title from sub_majors");
+                                                                                    while($sub_major = mysqli_fetch_assoc($sub_majors_query)) {
+                                                                                        echo "<option value='" . $sub_major['sub_id'] . "'>" . $sub_major['title'] . "</option>";
+                                                                                    }
+                                                                                    ?>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                <label for="session_field">Email</label>
+                                                                                <input id="session_field" class="form-control" value="<?php echo $result['email'] ?>" type="text" name="email" required>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
@@ -275,12 +291,19 @@
                                 <select id="session_field" class="form-control" name="session_field" required>
                                     <option value="">Select a sub-major</option>
                                     <?php
-                                    $sub_majors_query = mysqli_query($con, "SELECT * FROM sub_majors");
+                                    $sub_majors_query = mysqli_query($con, "SELECT sub_id, title from sub_majors");
                                     while($sub_major = mysqli_fetch_assoc($sub_majors_query)) {
                                         echo "<option value='" . $sub_major['sub_id'] . "'>" . $sub_major['title'] . "</option>";
                                     }
                                     ?>
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input id="email" class="form-control" type="text" name="email" required>
                             </div>
                         </div>
 
@@ -333,7 +356,7 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
-    <?php include('includes/footer.php') ?>
+    <?php include('includes/footeer.php') ?>
 
  
     <?php include('includes/scripts.php') ?>

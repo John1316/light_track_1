@@ -81,6 +81,7 @@
                                                 <tr>
                                                     <th>Faculty ID</th>
                                                     <th>Faculty Name</th>
+                                                    <th>IMAGE</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -97,6 +98,7 @@
                                                 <tr>
                                                     <td class="text-bold-500">#<?php echo $result['faculty_id'] ?></td>
                                                     <td><?php echo $result['name'] ?></td>
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['image']; ?>" alt=""></td>
                                                     <td class="d-flex">
 
 
@@ -119,7 +121,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form method="POST">
+                                                            <form method="POST" enctype="multipart/form-data">
                                                                 <input type="hidden" name="faculty_id" id="faculty_id" value="<?php echo $result['faculty_id'] ?>">
                                                             <div class="row">
                                                                     <div class="col-12">
@@ -128,6 +130,12 @@
                                                                             <input id="name" class="form-control" value="<?php echo $result['name'] ?>" type="text" name="name" required>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-12">
+                                                                 <div class="form-group">
+                                                                    <label for="image">Image</label>
+                                                                    <input id="image" class="form-control" type="file" name="image" >
+                                                                 </div>
+                                                                </div>
                                                                 </div>
                                                             <div class="modal-footer">
                                                                 <button type="submit" name="update_faculty" class="btn btn-primary">Update faculty</button>
@@ -164,7 +172,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -172,6 +180,12 @@
                                 <input id="name" class="form-control" type="text" name="name" required>
                             </div>
                         </div>
+                        <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input id="image" class="form-control" type="file" name="image">
+                                </div>
+                            </div>
                         </div>
                     
                     </div>
@@ -190,7 +204,7 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
-    <?php include('includes/footer.php') ?>
+    <?php include('includes/footeEr.php') ?>
 
 
  <?php include('includes/scripts.php') ?>

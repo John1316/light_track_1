@@ -14,7 +14,18 @@ if(isset($_POST['submit'])){
 
   if(mysqli_num_rows($result)==1){
 
-   // $row = mysqli_fetch_array($result);
+	  while($row = mysqli_fetch_array($result) ){
+		$_SESSION['user_id'] = $row['user_id'];
+		$_SESSION['first_name'] = $row['first_name'];
+		$_SESSION['last_name'] = $row['last_name'];
+		$_SESSION['email'] = $row['email'];
+		$_SESSION['phone_no'] = $row['phone_no'];
+		$_SESSION['address'] = $row['address'];
+		$_SESSION['birthdate'] = $row['birthdate'];
+		$_SESSION['gender'] = $row['gender'];
+		$_SESSION['statues'] = $row['statues'];
+	  }
+   // $row = mysqli_= fetch_array($result);
     header("location: index.php");
  }else{
     $error= 'incorrect email or password!';
@@ -81,91 +92,9 @@ if(isset($_POST['submit'])){
 			</div>
 		</div>
 		<!-- Pre-loader End -->
-
-        <!-- Navbar Area Start -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="main-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assetss/img/logo.png" alt="logo">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="index-four.html" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About</a>
-                                </li>     
-                                
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">services</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="company.html" class="nav-link">events</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="pricing.html" class="nav-link">Pricing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="nav-item">
-                                                        <a href="account.html" class="nav-link">Account</a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="resume.html" class="nav-link">Resume</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">courses</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Blog</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">Majors</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-two.html" class="nav-link">Blog Two</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
-                                </li>
-								<li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">sign up</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="sign-up.html" class="nav-link">sign up as user</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="ad-sign-up.html" class="nav-link">sign up as advisor</a>
-                                        </li>
-                                        
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="other-option">
-                                <a href="sign-in.html" class="signin-btn">Sign In</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar Area End -->
-
+  <!-- Navbar Area Start -->
+  <?php include('includes/header.php') ?>
+        
         <!-- Page Title Start -->
         <section class="page-title title-bg12">
             <div class="d-table">
@@ -215,7 +144,7 @@ if(isset($_POST['submit'])){
                             </div>
 
                             <div class="other-signin text-center">
-                                <span>Or sign in with advisor</span>
+                            <!--    <span>Or sign in with advisor</span> -->
                                 <ul>
                                     <li>
                                         <a href="#">
@@ -242,7 +171,7 @@ if(isset($_POST['submit'])){
 
                             <div class="create-btn text-center">
                                 <p>Not have an account?
-                                    <a href="sign-up.html">
+                                    <a href="sign-up.php">
                                         Create an account
                                         <i class='bx bx-chevrons-right bx-fade-right'></i>
                                     </a>

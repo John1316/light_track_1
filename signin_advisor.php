@@ -9,17 +9,26 @@ if(isset($_POST['submit'])){
    $select = " SELECT * FROM `advisors` WHERE email = '$email' && password= '$pass' ";
    $result = mysqli_query($con, $select);
    if (!$result) {
-    die('check as something went wrong in the sql statement');
-} else {
+       die('check as something went wrong in the sql statement');
+    } else {
     while ($row = mysqli_fetch_array($result)){
-        $_SESSION['id'] = $row['advisor_id'];
+        $_SESSION['advisor_id'] = $row['advisor_id'];
+        $_SESSION['sub_id'] = $row['sub_id'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['phone_no'] = $row['phone_no'];
+        $_SESSION['bio'] = $row['bio'];
+        $_SESSION['linkidin_profile'] = $row['linkidin_profile'];
+        $_SESSION['work_experience'] = $row['work_experience'];
+        $_SESSION['availability'] = $row['availability'];
+        $_SESSION['gender'] = $row['gender'];
         $_SESSION['status'] = $row['status'];
-     
+ 
     }
     $count = mysqli_num_rows($result);
     if ($count == 1 && $_SESSION['status'] == 1) {
         $_SESSION['name'] = $email;
-        header("location: index.html");
+        header("location: dashboard.php");
     } elseif($count == 1 && $_SESSION['status'] == 0){
         $error = "Your are not verified";
     }
@@ -91,80 +100,8 @@ if(isset($_POST['submit'])){
 		</div>
 		<!-- Pre-loader End -->
 
-        <!-- Navbar Area Start -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="main-nav">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assetss/img/logo.png" alt="logo" class="img-fluid">
-                        </a>
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                            <ul class="navbar-nav m-auto">
-                                <li class="nav-item">
-                                    <a href="index-four.html" class="nav-link ">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About</a>
-                                </li>     
-                                
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">services</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="company.html" class="nav-link">events</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="pricing.html" class="nav-link">Pricing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
-                                                <ul class="dropdown-menu">
-                                                    <li class="nav-item">
-                                                        <a href="account.html" class="nav-link">Account</a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="resume.html" class="nav-link">Resume</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">courses</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Blog</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">Majors</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-two.html" class="nav-link">Blog Two</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">Blog Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact Us</a>
-                                </li>
-								
-                            </ul>
-                            <div class="other-option">
-								<a href="sign-up.html" class="signup-btn">Sign Up</a>
-								<a href="sign-in.html" class="signin-btn">Sign In</a>
-							</div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <!-- Navbar Area End -->
-
+  <!-- Navbar Area Start -->
+  <?php include('includes/header_1.php') ?>
         <!-- Page Title Start -->
         <section class="page-title title-bg12">
             <div class="d-table">

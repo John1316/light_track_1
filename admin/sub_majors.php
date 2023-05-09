@@ -84,13 +84,14 @@
                                                     <th>#</th>
                                                     <th>Sub Major NAME</th>
                                                     <th>Major NAME</th>
+                                                    <th>IMAGE</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php 
 
-                                                $categories = "SELECT sub_majors.title, sub_majors.sub_id , majors.title AS major_title , sub_majors.major_id FROM sub_majors INNER JOIN majors ON majors.major_id = sub_majors.major_id
+                                                $categories = "SELECT sub_majors.title, sub_majors.sub_id , majors.title AS major_title , sub_majors.major_id, sub_majors.image FROM sub_majors INNER JOIN majors ON majors.major_id = sub_majors.major_id
                                                 ";
                                                 $category_query = mysqli_query($con, $categories) or die('users_error'.mysqli_error($con));
 
@@ -102,6 +103,8 @@
                                                     <td class="text-bold-500">#<?php echo $result['sub_id'] ?></td>
                                                     <td><?php echo $result['title'] ?></td>
                                                     <td><?php echo $result['major_title'] ?></td>
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['image']; ?>" alt=""></td>
+
                                                     <td class="d-flex">
 
 
@@ -125,7 +128,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form method="POST">
+                                                            <form method="POST"  enctype="multipart/form-data">
                                                             <div class="row">
                                                             <input type="hidden" name="sub_id" id="sub_id" value="<?php echo $result['sub_id'] ?>">
                                                                 <div class="col-12">
@@ -137,7 +140,7 @@
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label for="major_id">Majors</label>
-                                                                        <select id="major_id" class="form-control" type="text" name="major_id" required value="<?php echo $result['major_id'] ?>">
+                                                                        <select id="major_id" class="form-control"name="major_id"  value="<?php echo $result['major_id'] ?>"  type="text" required>
                                                                             <option value="">Select major</option>
                                                                             <?php
                                                                             $majors = "SELECT * FROM `majors`";
@@ -152,6 +155,13 @@
                                                                             }
                                                                             ?>
                                                                         </select>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label for="image">Image</label>
+                                                                        <input id="image" class="form-control" value="<?php echo $result['image'] ?>" type="file" name="image" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -190,7 +200,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST"  enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -221,6 +231,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-12">
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input id="image" class="form-control" type="file" name="image" required>
+                            </div>
+                        </div>
                     <div class="modal-footer">
                         <button type="submit" name="add_sub_majors" class="btn btn-primary">Add sub major</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -234,7 +250,7 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
-    <?php include('includes/footer.php') ?>
+    <?php include('includes/footeer.php') ?>
 
 
  <?php include('includes/scripts.php') ?>

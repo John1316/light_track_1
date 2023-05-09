@@ -33,7 +33,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header.php') ?>
+		<?php include('includes/header_1.php') ?>
 
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
@@ -43,7 +43,7 @@ require_once('functions/connection.php');
                     <h2>Sub majors</h2>
                     <ul>
                         <li>
-                            <a href="index-four.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>Sub majors</li>
                     </ul>
@@ -68,6 +68,7 @@ require_once('functions/connection.php');
 				<div class="row">
 					<?php 
 					$submajors_stat = "SELECT * FROM `jobs` where `sub_id`=".$_GET['submajor_id']." ";
+				
 					$sub_majors_query = mysqli_query($con, $submajors_stat) or die('Error in mysql'. mysqli_error($con));
 					while($result = mysqli_fetch_array($sub_majors_query)){
 					?>

@@ -2,8 +2,9 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto"><a class="navbar-brand" href="#">
-                        <div class="brand-logo"><img class="logo" src="app-assets/images/logo/logo.png" /></div>
-                        <h2 class="brand-text mb-0">Dashboard</h2>
+                        <div class="brand-logo"><img class="logo" src="app-assets/images/logo/logo.png"/></div>
+                      
+                        <h2 class="brand-text mb-0">Light Track</h2>
                     </a></li>
                 
             </ul>

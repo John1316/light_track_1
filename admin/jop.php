@@ -114,7 +114,7 @@ if (!isset($_SESSION['admin_id'])) {
                                                         <td><?php echo $result['soft_skills'] ?></td>
 
                                                         <td><?php echo  substr($result['technical_skills'], 0, 100); ?></td>
-
+                                                        
                                                         <td><?php echo $result['average_salary'] ?></td>
 
                                                         <td><?php echo substr($result['courses'], 0, 100); ?></td>
@@ -196,6 +196,7 @@ if (!isset($_SESSION['admin_id'])) {
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="name">Technical skills</label>
+                                                
                                                 <textarea style="height:100px" class="form-control" type="text" name="technical_skills" required><?php echo $result['technical_skills'] ?> </textarea>
                                             </div>
                                         </div>
@@ -308,8 +309,9 @@ if (!isset($_SESSION['admin_id'])) {
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="name">Technical Skills</label>
-                                    <textarea style="height:100px" class="form-control" type="text" name="technical_skills" required>Enter text here...</textarea>
-
+                                    <!-- <textarea style="height:100px" class="form-control" type="text" name="technical_skills" required>Enter text here...</textarea> -->
+                                    <!-- <div id="editor">
+                                            </div> -->
                                 </div>
                             </div>
                             <div class="col-12">
@@ -347,15 +349,25 @@ if (!isset($_SESSION['admin_id'])) {
     <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix mb-0"><span class="float-left d-inline-block">2023 &copy; Test Career</span><span class="float-right d-sm-inline-block d-none">Crafted with by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Test Career</a></span>
-            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
-        </p>
-    </footer>
+    <?php include('includes/footeer.php') ?>
     <!-- END: Footer-->
 
     <?php include('includes/scripts.php') ?>
+    <textarea name="editor" id="editor"></textarea>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
+<script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+</script>
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.css">
+  </script>
 </body>
 <!-- END: Body-->
 

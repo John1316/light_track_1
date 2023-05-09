@@ -9,6 +9,8 @@
 
     <!-- BEGIN: Page Vendor JS-->
     <!-- END: Page Vendor JS-->
+    <link rel="stylesheet" href="assets/js/ckeditor.js">
+    <link rel="stylesheet" href="assets/js/sample.js">
 
     <!-- BEGIN: Theme JS-->
     <script src="app-assets/js/scripts/configs/vertical-menu-light.js"></script>

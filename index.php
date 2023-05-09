@@ -1,3 +1,6 @@
+<?php
+require_once( 'connectionproject.php');
+?>
 <!doctype html>
 <html lang="zxx">
     <head>
@@ -27,11 +30,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- Pre-loader End -->
-        <?php include('includes/header.php') ?>
 
         
-
+		<!-- Pre-loader End -->
+        <?php include('includes/header.php') ?>
         <!-- Banner Section Start -->
         <div class="banner-style-three banner-style-four">
             <div class="d-table">
@@ -54,7 +56,7 @@
             </div>
 
             <div class="banner-img">
-                <img src="assetss/img/home/3.jpg" alt="banner image"width="520px" height="520px">
+                <img src="assetss/img/home/3.jpg" alt="banner image">
             </div>
         </div>
         <!-- Banner Section End -->
@@ -108,10 +110,10 @@
                         <div class="job-card-two">
                             <div class="row align-items-center">
                                 <div class="col-md-1">
-                                    <div class="company-logo">
+                                  
                                         <a href="https://www.facebook.com/events/609049797584972"></a>
-                                        <img src="assetss/img/events/2.jpg" alt="logo" height="55px"width="55px">
-                                    </div>
+                                        <img src="assetss/img/events/2.jpg" alt="logo" height="100px" width="700">
+                                 
                                 </div>
                                 <div class="col-md-8">
                                     <div class="job-info">
@@ -139,7 +141,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="theme-btn text-end">
-                                        <a href="https://www.facebook.com/events/609049797584972" class="default-btn">
+                                        <a href="femPower_1-25-1024x620.jpg" class="default-btn">
                                             Browse more
                                         </a>
                                     </div>
@@ -152,10 +154,10 @@
                         <div class="job-card-two">
                             <div class="row align-items-center">
                                 <div class="col-md-1">
-                                    <div class="company-logo">
+                                    
                                         <a href="job-details.html"></a>
-                                        <img src="assetss/img/events/3.jpg" alt="logo"height="55px"width="55px">
-                                    </div>
+                                        <img src="assetss/img/events/femPower_1-25-1024x620.jpg" alt="logo"height="100px" width="700">
+
                                 </div>
                                 <div class="col-md-8">
                                     <div class="job-info">
@@ -199,10 +201,10 @@
                         <div class="job-card-two">
                             <div class="row align-items-center">
                                 <div class="col-md-1">
-                                    <div class="company-logo">
+                                   
                                         <a href="https://career-180.com/en/events/ecs-2023/register"></a>
-                                        <img src="assetss/img/events/4.png" alt="logo">
-                                    </div>
+                                        <img src="assetss/img/events/4.png" alt="logo" height="100px" width="700">
+                                 
                                 </div>
                                 <div class="col-md-8">
                                     <div class="job-info">
@@ -267,20 +269,30 @@
                 <img src="assetss/img/home/1.jpg" alt="mobile image" height="400px" width="360">
             </div>
         </section>
+        <<!-- Way To Use Section Start -->
+		<section class="use-section pt-100 pb-70">
+			<div class="container">
+				<div class="section-title text-center">
+					<h2>Light Ttack</h2>
+				</div>
+
+				<div class="row">
+					
+
+					<div class="col-lg-4 col-sm-6">
+						
+					</div>
+
+					<div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+						
+					</div>
+				</div>
+			</div>
+		</section>
+        <!-- Way To Use Section End -->
+
         <!-- Apps Section End -->
 
-        <div class="counter-section pt-100 pb-70">
-            <div class="container">
-                <div class="row counter-area">
-                    
-        
-        
-                  
-        
-                    
-                </div>
-            </div>
-        </div>
         <!-- Counter Section End --> 
 > 
 

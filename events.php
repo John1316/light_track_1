@@ -35,7 +35,7 @@
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-        <?php include('includes/header.php') ?>
+        <?php include('includes/header_1.php') ?>
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
         <section class="page-title title-bg5">
@@ -45,7 +45,7 @@
 						Events</h2>
                     <ul>
                         <li>
-                            <a href="index.php">Home</a>
+                            <a href="home.php">Home</a>
                         </li>
                        
                     </ul>
@@ -63,7 +63,7 @@
 				<section class="job-style-two job-list-section pt-100 pb-70">
 					<div class="container">
 						<div class="section-title text-center">
-							<h2> Events You May Be Interested In</h2>
+							<h1> Events You May Be Interested In</h1>
 							<p>Attending career-related events and sessions can be crucial for professional development. They provide opportunities to network, learn new skills, and stay up-to-date on industry trends, which can ultimately help advance your career</p>
 						</div>
 		
@@ -81,17 +81,21 @@
 										<div class="job-card-two">
 											<div class="row align-items-center">
 												<div class="col-md-1">
-													<div class="company-logo">
-														<!-- <a href="<?php echo $result['event_link'] ?>"><?php echo $result['event_link'] ?></a> -->
-														<img src="images/<?php echo $result['event_image'] ?>" alt="logo" height="55px"width="55px">
-													</div>
+														
+														<img src="images/<?php echo $result['event_image'] ?>" alt="logo" height="100px" width="700">
 												</div>
 												<div class="col-md-8">
 													<div class="job-info">
 														<h3>
 															<a href="https://www.facebook.com/events/609049797584972"><?php echo $result['event_name'] ?></a>
 														</h3>
-														
+														<h3>
+									
+								<td width='80' style='text-align:center;'>
+									<h6><?php echo $result['introduction'] ?></h6>
+					           </td>
+								</h3>
+
 													</div>
 												</div>
 												<div class="col-md-3">
