@@ -33,7 +33,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header_1.php') ?>
+		<?php include('includes/header.php') ?>
 
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
@@ -76,7 +76,9 @@ require_once('functions/connection.php');
 							
 							<div class="blog-text">
 							
-
+							<a href="faculty_majors.php?faculty_id=<?php echo $result['faculty_id'] ?>" class="blog-btn">
+									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
+                                </a>
 								<h3>
 									<?php echo $result['name'] ?>
 									

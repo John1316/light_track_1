@@ -32,16 +32,8 @@
                 </li>
                
                 <li class="nav-item">
-                    <a href="#" class="nav-link dropdown-toggle">advisor consultent</a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a href="adv.html" class="nav-link">advisors</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a href="resg-adv.html" class="nav-link">registration advisor</a>
-                        </li>
-                    </ul>
+                    <a href="resg-adv.php" class="nav-link">advisor consultent</a>
+                   
                 </li>
             
         </ul>
@@ -67,6 +59,7 @@
 </ul>
 <div class="other-option">
     <a><?= $_SESSION['first_name'] ?></a>
+    <a><?= $_SESSION['last_name'] ?></a>
     <a href="logout.php"  class="signup-btn">Logout</a>
     <!-- <li class="nav-item">
         <a href="#" class="nav-link dropdown-toggle"><?= $_SESSION['first_name'] ?></a>
@@ -117,16 +110,7 @@
                                                 <a href="sign-up.php" class="nav-link">Events</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="sign-up.php" class="nav-link dropdown-toggle">advisor consultent</a>
-                                                <ul class="dropdown-menu">
-                                                <li class="nav-item">
-                                                        <a href="sign-up.php" class="nav-link">advisors</a>
-                                                    </li>
-                                                    
-                                                    <li class="nav-item">
-                                                        <a href="sign-up.php" class="nav-link">registration advisor</a>
-                                                    </li>
-                                                </ul>
+                                                <a href="sign-up.php" class="nav-link">advisor consultent</a>
                                             </li>
                                         
                                     </ul>

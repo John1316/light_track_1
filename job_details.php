@@ -36,7 +36,7 @@
 		<!-- Pre-loader End -->
 
 
-        <?php include('includes/header_1.php') ?>
+        <?php include('includes/header.php') ?>
         <!-- Page Title Start -->
         <section class="page-title title-bg22" >
             <div class="d-table">
@@ -187,21 +187,11 @@
 								</ul>
                             </div>
 
+                            
                             <h3 class="post-title"><?php echo $result_details['title'] ?></h3><!--dih mmkn tt8yr business-->
+                            
                             <h5>DESCRIPTION & RESPONSABILTIES</h5>
-
                              <p><?php echo $result_details['description'] ?></p>
-
-
-                         <!--    <div class="row">   7ot swr liha 3elaka bl job
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details2.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details3.jpg" class="details-inner-img" alt="blog details image">
-                                </div> 
-                            </div> 
-                            -->
 
                             <h5>SOFT SKILLS</h5>
                              <p><?php echo $result_details['soft_skills'] ?></p>

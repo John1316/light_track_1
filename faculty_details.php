@@ -36,7 +36,7 @@
 		<!-- Pre-loader End -->
 
 
-        <?php include('includes/header.php') ?>
+        <?php include('includes/header_1.php') ?>
         <!-- Page Title Start -->
         <section class="page-title title-bg22" >
             <div class="d-table">
@@ -48,7 +48,6 @@
                         </li>
                         <li><?php echo $result_details['name'] ?></li><!--8yrha business major lw 3aml 7aga lel search-->
                     </ul>
-                    <!-- <p><?php echo $result_details['description'] ?></p> -->
 
                 </div>
             </div>
@@ -171,7 +170,7 @@
                     </div>
                           <?php
 
-                          $jobs = "SELECT * from `faculties`";
+                          $jobs = "SELECT * from `faculty_majors`";
                           ?>
                     <div class="col-lg-8">
                         <div class="blog-dedails-text">
@@ -192,39 +191,17 @@
 								</ul>
                             </div>
 
-                            <h3 class="post-title"><?php echo $result_details['title'] ?></h3><!--dih mmkn tt8yr business-->
-                            <h5>DESCRIPTION & RESPONSABILTIES</h5>
+                            <h3 class="post-title"><?php echo $result_details['name'] ?></h3><!--dih mmkn tt8yr business-->
+                           
+                            <h5>Major Name</h5>
+                             <p><?php echo $result_details['name'] ?></p>
 
-                             <p><?php echo $result_details['description'] ?></p>
+                            <h5>Job Fields</h5>
+                             <p><?php echo $result_details['job_fields'] ?></p>
 
-
-                            <div class="row"><!--7ot swr liha 3elaka bl job-->
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details2.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details3.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                            </div>
-
-                            <h5>SOFT SKILLS</h5>
-                             <p><?php echo $result_details['soft_skills'] ?></p>
-                            
-                            <h5>TECHNICAL SKILLS</h5>
-                             <p><?php echo $result_details['technical_skills'] ?></p>
-                            
-                            <h5>AVERAGE SALARY</h5>
-                             <p><?php echo $result_details['average_salary'] ?></p>
-
-                            <h5>Courses</h5>
-                             <p><?php echo $result_details['courses'] ?></p>
-                            
-                           ?>
-
-                            
-                            <h5>SOFT SKILLS</h5>
+                            <h5>Description</h5>
                             <p><?php echo $result_details['description'] ?></p>
-                            <h5 id="avg-salary">>Average Salary Of Each Job Titles:</h5><!--salary -->
+                           
                             <p> 
                          <!--     It's difficult to say which software developer/engineer job title is the most in demand, as the demand for these roles can vary depending on the industry, location, and company. However, according to various industry reports and job market analyses, some of the most in-demand software developer/engineer job titles in recent years have been:
 
@@ -263,148 +240,17 @@
                             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
 
                         -->
-                        <div class="details-tag">
-                            <ul>
-                            <li>Tags:</li>
-                            <li>
-                            <a href="#soft-skills">Soft Skills</a>
-                            </li>
-                            <li>
-                            <a href="#technical-skills">Technical Skills</a>
-                            </li>
-                            <li>
-                            <a href="#avg-salary">Avarage Salary</a>
-                            </li>
-                            </ul>
-                        </div>
+                        
                         </div>
 
 
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details2.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="assets/img/blog/blog-details3.jpg" class="details-inner-img" alt="blog details image">
-                                </div>
-                            </div>
-                            <br>
-                            <h5>>Related Courses</h5>
-
-                             <p>Attending career-focused courses and sessions can enhance your knowledge and skills, making you more competitive in the job market. It can also demonstrate your commitment to professional growth, leading to better job opportunities and career advancement.</p>
+                            
                     
-                            <section class="company-section company-style-two pt-100 pb-70">
-                                <div class="container">
-                                    
-                                       
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="company-card">
-                                                <div class="company-logo">
-                                                    <a href="job-list.html">
-                                                        <img src="assets/img/top-company/1.png" alt="company logo">
-                                                    </a>
-                                                </div>
-                                                <div class="company-text">
-                                                    <h3>course name</h3>
-                                                    <p>
-                                                        <i class='bx bx-location-plus'></i>
-                                                        Green Lanes, London
-                                                    </p>
-                                                    <p>
-                                                        <i class='bx bx-briefcase'></i>
-                                                        course category
-                                                    </p><p>
-                                                        <i class='bx bx-dollar'></i>
-                                                        price
-                                                    </p>
-                                                    <a href="job-list.html" class="company-btn">
-                                                        brouse more
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                           
 
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="company-card">
-                                                <div class="company-logo">
-                                                    <a href="job-list.html">
-                                                        <img src="assets/img/top-company/1.png" alt="company logo">
-                                                    </a>
-                                                </div>
-                                                <div class="company-text">
-                                                    <h3>course name</h3>
-                                                    <p>
-                                                        <i class='bx bx-location-plus'></i>
-                                                        Green Lanes, London
-                                                    </p>
-                                                    <p>
-                                                        <i class='bx bx-briefcase'></i>
-                                                        course category
-                                                    </p><p>
-                                                        <i class='bx bx-dollar'></i>
-                                                        price
-                                                    </p>
-                                                    <a href="job-list.html" class="company-btn">
-                                                        brouse more
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="company-card">
-                                                <div class="company-logo">
-                                                    <a href="job-list.html">
-                                                        <img src="assets/img/top-company/1.png" alt="company logo">
-                                                    </a>
-                                                </div>
-                                                <div class="company-text">
-                                                    <h3>course name</h3>
-                                                    <p>
-                                                        <i class='bx bx-location-plus'></i>
-                                                        Green Lanes, London
-                                                    </p>
-                                                    <p>
-                                                        <i class='bx bx-briefcase'></i>
-                                                        course category
-                                                    </p><p>
-                                                        <i class='bx bx-dollar'></i>
-                                                        price
-                                                    </p>
-                                                    <a href="job-list.html" class="company-btn">
-                                                        brouse more
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      
                                         
-                                        <div class="col-lg-6 col-sm-6">
-                                            <div class="company-card">
-                                                <div class="company-logo">
-                                                    <a href="job-list.html">
-                                                        <img src="assets/img/top-company/1.png" alt="company logo">
-                                                    </a>
-                                                </div>
-                                                <div class="company-text">
-                                                    <h3>course name</h3>
-                                                    <p>
-                                                        <i class='bx bx-location-plus'></i>
-                                                        Green Lanes, London
-                                                    </p>
-                                                    <p>
-                                                        <i class='bx bx-briefcase'></i>
-                                                        course category
-                                                    </p><p>
-                                                        <i class='bx bx-dollar'></i>
-                                                        price
-                                                    </p>
-                                                    <a href="job-list.html" class="company-btn">
-                                                        brouse more
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                     
                                     </div>
                                 </div>
                                 

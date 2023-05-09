@@ -109,7 +109,6 @@ require_once('functions/connection.php');
                                 </a>
 
 								<h3>
-								<h3>
 									<?php echo $result['name'] ?>
 									
 								</h3>

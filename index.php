@@ -34,9 +34,6 @@ require_once( 'connectionproject.php');
         
 		<!-- Pre-loader End -->
         <?php include('includes/header.php') ?>
-
-        
-
         <!-- Banner Section Start -->
         <div class="banner-style-three banner-style-four">
             <div class="d-table">

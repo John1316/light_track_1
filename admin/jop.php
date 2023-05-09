@@ -353,15 +353,21 @@ if (!isset($_SESSION['admin_id'])) {
     <!-- END: Footer-->
 
     <?php include('includes/scripts.php') ?>
-                                        <script>
-                                            CKEDITOR.editorConfig = function( config ) {
-	config.language = 'es';
-	config.uiColor = '#F7B42C';
-	config.height = 300;
-	config.toolbarCanCollapse = true;
-};
+    <textarea name="editor" id="editor"></textarea>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
-                                        </script>
+<script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .then( editor => {
+                    console.log( editor );
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+</script>
+<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.css">
+  </script>
 </body>
 <!-- END: Body-->
 

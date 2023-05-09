@@ -26,7 +26,7 @@
     <?php include('includes/sidebar.php') ?>
 
     <!-- END: Main Menu-->
-
+s
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -84,13 +84,14 @@
                                                     <th>Major Name</th>
                                                     <th>Description</th>
                                                     <th>Job Fields</th>
+                                                    <th>Image</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php 
 
-                                                $categories = "SELECT faculty_majors.major_id , faculty_majors.faculty_id ,faculty_majors.name AS major_name , faculty_majors.description, faculty_majors.job_fields , faculties.name AS faculty_name from `faculty_majors` INNER JOIN faculties on faculty_majors.faculty_id = faculties.faculty_id;";
+                                                $categories = "SELECT faculty_majors.major_id , faculty_majors.faculty_id ,faculty_majors.name AS major_name , faculty_majors.description, faculty_majors.job_fields , faculties.name AS faculty_name, faculty_majors.image from `faculty_majors` INNER JOIN faculties on faculty_majors.faculty_id = faculties.faculty_id;";
                                                 $category_query = mysqli_query($con, $categories) or die('users_error'.mysqli_error($con));
 
                                                 while($result = mysqli_fetch_array($category_query)){
@@ -103,6 +104,7 @@
                                                     <td><?php echo $result['major_name'] ?></td>
                                                     <td><?php echo $result['description'] ?></td>
                                                     <td><?php echo $result['job_fields'] ?></td>
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['image']; ?>" alt=""></td>
                                                     <td class="d-flex">
 
 
@@ -125,12 +127,12 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form method="POST">
+                                                            <form method="POST" enctype="multipart/form-data">
                                                                 <input type="hidden" name="major_id" id="major_id " value="<?php echo $result['major_id'] ?>">
                                                             <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="form-group">
-                                                                            <label for="name">MajorsID<</label>
+                                                                            <label for="name">Majors Name</label>
                                                                             <select name="faculty_id" id="faculty_id" class="form-control">
                                     <option value="">Select faculty</option>
                                     <?php
@@ -139,9 +141,12 @@
 
                                     while($result_fac = mysqli_fetch_array($faculty_query)){
 
-                                
+                                        $selected = '';
+                                        if ($result_fac['faculty_id'] == $result['faculty_id']) {
+                                            $selected = 'selected';
+                                        }
                                     ?>
-                                    <option value="<?php echo $result_fac['faculty_id'] ?>"><?php echo $result_fac['name'] ?></option>
+                                    <option value="<?php echo $result_fac['faculty_id'] ?>"<?php echo $selected ?>><?php echo $result_fac['name'] ?></option>
                                     <?php
                                     }
                                     ?>
@@ -168,6 +173,12 @@
                                                                             <textarea style="height:100px" class="form-control" type="text" name="job_fields" required> <?php echo $result['job_fields'] ?></textarea>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="col-12">
+                                                                 <div class="form-group">
+                                                                    <label for="image">Image</label>
+                                                                    <input id="image" class="form-control" type="file" name="image" >
+                                                                 </div>
+                                                                </div>
                                                                 </div>
                                                             <div class="modal-footer">
                                                                 <button type="submit" name="update_major" class="btn btn-primary">Update Major</button>
@@ -204,7 +215,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -244,7 +255,13 @@
                                 <textarea  class="form-control"  type="text" name="job_fields" required>Enter text here...</textarea>
                             </div>
                         </div>
-                    
+                        <div class="col-12">
+                                <div class="form-group">
+                                    <label for="image">Image</label>
+                                    <input id="image" class="form-control" type="file" name="image">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 
                    
