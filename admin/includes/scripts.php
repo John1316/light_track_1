@@ -19,3 +19,5 @@
     <script src="app-assets/js/scripts/components.js"></script>
     <script src="app-assets/js/scripts/footer.js"></script>
     <!-- END: Theme JS-->
+    <script src="./assets/js/ckeditor.js"></script>
+    <script src="./assets/js/scripts.js"></script>

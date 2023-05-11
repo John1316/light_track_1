@@ -182,14 +182,14 @@ if (!isset($_SESSION['admin_id'])) {
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="name">Description</label>
-                                            <textarea style="height:100px" class="form-control" type="text" name="description" required><?php echo $result['description'] ?></textarea>
+                                            <textarea id="editor5" class="form-control" type="text" name="description" required><?php echo $result['description'] ?></textarea>
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="name">Soft skills</label>
-                                            <textarea style="height:100px" class="form-control" type="text" name="soft_skills" required><?php echo $result['soft_skills'] ?></textarea>
+                                            <textarea id="editor6" class="form-control" type="text" name="soft_skills" required><?php echo $result['soft_skills'] ?></textarea>
                                         </div>
                                     </div>
 
@@ -197,21 +197,21 @@ if (!isset($_SESSION['admin_id'])) {
                                             <div class="form-group">
                                                 <label for="name">Technical skills</label>
                                                 
-                                                <textarea style="height:100px" class="form-control" type="text" name="technical_skills" required><?php echo $result['technical_skills'] ?> </textarea>
+                                                <textarea id="editor7" class="form-control" type="text" name="technical_skills" required><?php echo $result['technical_skills'] ?> </textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="name">Average salary</label>
-                                                <textarea style="height:100px" id="name" class="form-control" type="text" name="average_salary" required><?php echo $result['average_salary'] ?></textarea>
+                                                <textarea  id="name" class="form-control" type="text" name="average_salary" required><?php echo $result['average_salary'] ?></textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="name">courses</label>
-                                                <textarea style="height:100px" class="form-control" type="text" name="courses" required> <?php echo $result['courses'] ?></textarea>
+                                                <textarea id="editor8" class="form-control" type="text" name="courses" required> <?php echo $result['courses'] ?></textarea>
                                             </div>
                                         </div>
                                        
@@ -296,20 +296,20 @@ if (!isset($_SESSION['admin_id'])) {
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="name">Description</label>
-                                    <textarea style="height:100px" class="form-control" type="text" name="description" required>Enter text here...</textarea>
+                                    <textarea class="form-control" type="text" name="description" id="editor1" required>Enter text here...</textarea>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="name">Soft Skills</label>
-                                    <textarea style="height:100px" class="form-control" type="text" name="soft_skills" required>Enter text here...</textarea>
+                                    <textarea id="editor2" class="form-control" type="text" name="soft_skills" required>Enter text here...</textarea>
 
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="name">Technical Skills</label>
-                                    <!-- <textarea style="height:100px" class="form-control" type="text" name="technical_skills" required>Enter text here...</textarea> -->
+                                    <textarea id="editor3" class="form-control" type="text" name="technical_skills" required>Enter text here...</textarea>
                                     <!-- <div id="editor">
                                             </div> -->
                                 </div>
@@ -324,7 +324,7 @@ if (!isset($_SESSION['admin_id'])) {
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="name">courses</label>
-                                    <textarea style="height:100px" class="form-control" type="text" name="courses" required>Enter text here...</textarea>
+                                    <textarea id="editor4" class="form-control" type="text" name="courses" required>Enter text here...</textarea>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -353,21 +353,8 @@ if (!isset($_SESSION['admin_id'])) {
     <!-- END: Footer-->
 
     <?php include('includes/scripts.php') ?>
-    <textarea name="editor" id="editor"></textarea>
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
 
-<script>
-            ClassicEditor
-                .create( document.querySelector( '#editor' ) )
-                .then( editor => {
-                    console.log( editor );
-                } )
-                .catch( error => {
-                    console.error( error );
-                } );
-</script>
-<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.css">
-  </script>
+
 </body>
 <!-- END: Body-->
 
