@@ -1,11 +1,11 @@
 <?php
-require_once('functions/connection.php');
+require_once('connectionproject.php');
 ?>
 <!doctype html>
 <html lang="zxx">
-<head>
+   <head>
         <?php include('includes/head.php') ?>
-    </head>
+  </head> 
 
     <body>
         <!-- Pre-loader Start -->
@@ -39,7 +39,7 @@ require_once('functions/connection.php');
                     <img src="assetss/img/logo.png" alt="logo" height="45px" >
                 </a>
             </div>
-        
+     </div>
         <!-- Page Title Start -->
         <section class="page-title title-bg1">
             <div class="d-table">
@@ -216,18 +216,18 @@ require_once('functions/connection.php');
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Counter Section End --> 
+         </div>
+         <!-- Counter Section End --> 
 
-<!-- Candidate Section Start -->
-<section class="candidate-section ptb-100">
-    <div class="container">
-        <div class="section-title text-center">
+           <!-- Candidate Section Start -->
+          <section class="candidate-section ptb-100">
+         <div class="container">
+         <div class="section-title text-center">
             <h2>Project Team</h2>
             <p>Seniors of BIS student</p>
-        </div>
+         </div>
 
-        <div class="condidate-slider owl-carousel owl-theme">
+         <div class="condidate-slider owl-carousel owl-theme">
             <div class="condidate-item">
                 <div class="candidate-img">
                     <img src="assetss/img/candidate/1.jpg" alt="candidate image">
@@ -434,9 +434,9 @@ require_once('functions/connection.php');
 
 
         </div>
-    </div>
-</section>
-<!-- Candidate Section End -->
+     </div>
+     </section>
+       <!-- Candidate Section End -->
        
        
           <!-- Footer Section Start -->

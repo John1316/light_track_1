@@ -1,6 +1,5 @@
 <?php
-require_once('functions/connection.php');
-
+require_once('connectionproject.php');
 
 if(isset($_POST['submit'])){
     $user_id = $_POST['user_id'];
@@ -92,7 +91,7 @@ if(isset($_POST['submit'])){
             </div>
         
             <!-- Menu For Desktop Device -->
-            <?php include('includes/header_1.php') ?>
+            <?php include('includes/header.php') ?>
 
         <!-- Navbar Area End -->
 <!-- Page Title Start -->

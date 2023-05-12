@@ -1,5 +1,5 @@
 <?php
-require_once('functions/connection.php');
+require_once('connectionproject.php');
 if(isset($_POST['submit'])){
 
    $name = mysqli_real_escape_string($con, $_POST['name']);
@@ -89,7 +89,7 @@ if(isset($_POST['submit'])){
             </div>
         
               <!-- Navbar Area Start -->
-		<?php include('includes/header_1.php') ?>
+		<?php include('includes/header.php') ?>
         
         <!-- Page Title Start -->
         <section class="page-title title-bg23">

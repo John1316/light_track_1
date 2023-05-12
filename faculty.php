@@ -1,5 +1,5 @@
 <?php
-require_once('functions/connection.php');
+require_once('connectionproject.php');
 ?>
 
 
@@ -63,7 +63,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header_1.php') ?>
+		<?php include('includes/header.php') ?>
 <!-- Page Title Start -->
 <section class="page-title title-bg23" >
     <div class="d-table">

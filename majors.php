@@ -1,5 +1,5 @@
 <?php
-require_once('functions/connection.php');
+require_once('connectionproject.php');
 ?>
 <!doctype html>
 <html lang="zxx">
@@ -33,7 +33,7 @@ require_once('functions/connection.php');
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-		<?php include('includes/header_1.php') ?>
+		<?php include('includes/header.php') ?>
 
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
@@ -198,23 +198,7 @@ require_once('functions/connection.php');
 					
                 </div>
                 
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                <i class='bx bx-chevrons-left bx-fade-left'></i>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link active" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class='bx bx-chevrons-right bx-fade-right'></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                
 			</div>
 		</section>
 		<!-- Blog Section End -->        

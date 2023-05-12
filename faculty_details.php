@@ -1,5 +1,5 @@
 <?php
-    require_once('functions/connection.php');
+require_once('connectionproject.php');
     include('functions/f_details.php');
 ?>
 
@@ -202,7 +202,7 @@
                             <h5>Description</h5>
                             <p><?php echo $result_details['description'] ?></p>
                            
-                            <p> 
+                           
                          <!--     It's difficult to say which software developer/engineer job title is the most in demand, as the demand for these roles can vary depending on the industry, location, and company. However, according to various industry reports and job market analyses, some of the most in-demand software developer/engineer job titles in recent years have been:
 
                                 <br><b>1. Full Stack Developer:</b> Full stack developers are increasingly in demand due to their ability to work on both front-end and back-end technologies. With the rise of web applications and the need for complex web development projects, full stack developers are becoming more essential in the tech industry.

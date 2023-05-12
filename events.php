@@ -1,6 +1,5 @@
-<?php 
-	require_once('connectionproject.php')
-
+<?php
+require_once('connectionproject.php');
 ?>
 <!doctype html>
 <html lang="zxx">
@@ -35,7 +34,7 @@
 		<!-- Pre-loader End -->
 
         <!-- Navbar Area Start -->
-        <?php include('includes/header_1.php') ?>
+        <?php include('includes/header.php') ?>
         <!-- Navbar Area End -->
         <!-- Page Title Start -->
         <section class="page-title title-bg5">
