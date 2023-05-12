@@ -108,7 +108,7 @@ s
                                                     <td class="d-flex">
 
 
-                                                    <button  data-toggle="modal" data-target="#update_major<?php echo $result['major_id'] ?>" class="pl-0 btn btn-transparent"><i class="badge-circle badge-circle-light-secondary bx bx-edit font-medium-1"></i></button>
+                                                    <button id="<?= $result['major_id'] ?>"  data-toggle="modal" data-target="#update_major<?php echo $result['major_id'] ?>" class="pl-0 btn btn-transparent btnEdit"><i class="badge-circle badge-circle-light-secondary bx bx-edit font-medium-1"></i></button>
 
                                                     <form  method="post">
                                                         <input type="hidden" name="faculty_id" id="faculty_id" value="<?php echo $result['major_id'] ?>">
@@ -164,13 +164,13 @@ s
                                                                     <div class="col-12">
                                                                         <div class="form-group">
                                                                             <label for="name">Description</label>
-                                                                            <textarea style="height:100px" class="form-control" type="text" name="description" required> <?php echo $result['description'] ?></textarea>
+                                                                            <textarea id="editor_description<?= $result['major_id'] ?>" class="form-control" type="text" name="description" required> <?php echo $result['description'] ?></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12">
                                                                         <div class="form-group">
                                                                             <label for="name">Jop Fields</label>
-                                                                            <textarea style="height:100px" class="form-control" type="text" name="job_fields" required> <?php echo $result['job_fields'] ?></textarea>
+                                                                            <textarea id="editor_fields<?= $result['major_id'] ?>" style="height:100px" class="form-control" type="text" name="job_fields" required> <?php echo $result['job_fields'] ?></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12">
@@ -246,13 +246,13 @@ s
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="name">Description</label>
-                                <textarea class="form-control" type="text" name="description" required>Enter text here...</textarea>
+                                <textarea id="editor1" class="form-control" type="text" name="description" required>Enter text here...</textarea>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="name">Jop Fields</label>
-                                <textarea  class="form-control"  type="text" name="job_fields" required>Enter text here...</textarea>
+                                <textarea id="editor2"  class="form-control"  type="text" name="job_fields" required>Enter text here...</textarea>
                             </div>
                         </div>
                         <div class="col-12">
@@ -282,7 +282,14 @@ s
 
 
  <?php include('includes/scripts.php') ?>
-
+                                    <script>
+                                                    $('.btnEdit').on('click', function(event){
+                let id = event.currentTarget.attributes.id.value;
+                console.log(event.currentTarget.attributes.id.value)
+                ClassicEditor.create(document.querySelector(`#editor_description${id}`));
+                ClassicEditor.create(document.querySelector(`#editor_fields${id}`));
+            })
+                                    </script>
 
 </body>
 <!-- END: Body-->
