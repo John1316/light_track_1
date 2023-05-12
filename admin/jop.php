@@ -124,7 +124,12 @@ if (!isset($_SESSION['admin_id'])) {
                                                         <td class="d-flex">
 
 
-                                                            <button data-toggle="modal" data-target="#update_job<?php echo $result['job_id'] ?>" class="pl-0 btn btn-transparent"><i class="badge-circle badge-circle-light-secondary bx bx-edit font-medium-1"></i></button>
+                                                            <button data-toggle="modal" 
+                                                            id="<?= $result['job_id'] ?>"
+                                                            data-target="#update_job<?php echo $result['job_id'] ?>"
+                                                            
+                                                            class="pl-0 btn btn-transparent btnEdit">
+                                                            <i class="badge-circle badge-circle-light-secondary bx bx-edit font-medium-1"></i></button>
 
 
                                                             <form method="post">
@@ -133,107 +138,108 @@ if (!isset($_SESSION['admin_id'])) {
                                                             </form>
                                                         </td>
                                                     </tr>
-            <div id="update_job<?php echo $result['job_id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="my-modal-title">Title</h5>
-                            <button class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form method="POST" enctype="multipart/form-data">
-                                <div class="row">
-                                    <input type="hidden" name="job_id" id="job_id" value="<?php echo $result['job_id'] ?>">
+                                                    <div id="update_job<?php echo $result['job_id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="my-modal-title">Title</h5>
+                                                                    <button class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form method="POST" enctype="multipart/form-data">
+                                                                        <div class="row">
+                                                                            <input type="hidden" name="job_id" id="job_id" value="<?php echo $result['job_id'] ?>">
 
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="name">Sub Major Name</label>
-                                            <select id="sub_id" class="form-control" type="text" name="sub_id" required>
-                                                <option value="">Select sub major</option>
-                                                <?php
-                                                $sub_majors = "SELECT * FROM `sub_majors`";
-                                                $sub_majors_query = mysqli_query($con, $sub_majors) or die('users_error' . mysqli_error($con));
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="name">Sub Major Name</label>
+                                                                                    <select id="sub_id" class="form-control" type="text" name="sub_id" required>
+                                                                                        <option value="">Select sub major</option>
+                                                                                        <?php
+                                                                                        $sub_majors = "SELECT * FROM `sub_majors`";
+                                                                                        $sub_majors_query = mysqli_query($con, $sub_majors) or die('users_error' . mysqli_error($con));
 
-                                                while ($sub_majors_result = mysqli_fetch_array($sub_majors_query)) {
-                                                    $selected = '';
-                                                    if ($sub_majors_result['sub_id'] == $result['sub_id']) {
-                                                        $selected = 'selected';
-                                                    }
-                                                ?>
-                                                    <option value="<?php echo $sub_majors_result['sub_id'] ?>" <?php echo $selected ?>><?php echo $sub_majors_result['title'] ?></option>
-                                                <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <!-- <input id="name" class="form-control" value="<?php echo $result['sub_id'] ?>" type="text" name="sub_major_name" required> -->
+                                                                                        while ($sub_majors_result = mysqli_fetch_array($sub_majors_query)) {
+                                                                                            $selected = '';
+                                                                                            if ($sub_majors_result['sub_id'] == $result['sub_id']) {
+                                                                                                $selected = 'selected';
+                                                                                            }
+                                                                                        ?>
+                                                                                            <option value="<?php echo $sub_majors_result['sub_id'] ?>" <?php echo $selected ?>><?php echo $sub_majors_result['title'] ?></option>
+                                                                                        <?php
+                                                                                        }
+                                                                                        ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <input id="name" class="form-control" value="<?php echo $result['sub_id'] ?>" type="text" name="sub_major_name" required> -->
 
 
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="name">title</label>
-                                            <input id="name" class="form-control" value="<?php echo $result['title'] ?>" type="text" name="title" required>
-                                        </div>
-                                    </div>
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="name">title</label>
+                                                                                    <input id="name" class="form-control" value="<?php echo $result['title'] ?>" type="text" name="title" required>
+                                                                                </div>
+                                                                            </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="name">Description</label>
-                                            <textarea id="editor5" class="form-control" type="text" name="description" required><?php echo $result['description'] ?></textarea>
-                                        </div>
-                                    </div>
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="name">Description</label>
+                                                                                    <textarea id="editor_description<?= $result['job_id'] ?>" class="form-control" type="text" name="description" required><?php echo $result['description'] ?></textarea>
+                                                                                </div>
+                                                                            </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="name">Soft skills</label>
-                                            <textarea id="editor6" class="form-control" type="text" name="soft_skills" required><?php echo $result['soft_skills'] ?></textarea>
-                                        </div>
-                                    </div>
+                                                                            <div class="col-12">
+                                                                                <div class="form-group">
+                                                                                    <label for="name">Soft skills</label>
+                                                                                    <textarea id="editor_soft<?= $result['job_id'] ?>" class="form-control" type="text" name="soft_skills" required><?php echo $result['soft_skills'] ?></textarea>
+                                                                                </div>
+                                                                            </div>
 
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="name">Technical skills</label>
-                                                
-                                                <textarea id="editor7" class="form-control" type="text" name="technical_skills" required><?php echo $result['technical_skills'] ?> </textarea>
-                                            </div>
-                                        </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="name">Technical skills</label>
+                                                                                        
+                                                                                        <textarea id="editor_technical<?= $result['job_id'] ?>" class="form-control" type="text" name="technical_skills" required><?php echo $result['technical_skills'] ?> </textarea>
+                                                                                    </div>
+                                                                                </div>
 
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="name">Average salary</label>
-                                                <textarea  id="name" class="form-control" type="text" name="average_salary" required><?php echo $result['average_salary'] ?></textarea>
-                                            </div>
-                                        </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="name">Average salary</label>
+                                                                                        <textarea  id="name" class="form-control" type="text" name="average_salary" required><?php echo $result['average_salary'] ?></textarea>
+                                                                                    </div>
+                                                                                </div>
 
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="name">courses</label>
-                                                <textarea id="editor8" class="form-control" type="text" name="courses" required> <?php echo $result['courses'] ?></textarea>
-                                            </div>
-                                        </div>
-                                       
-                                        <div class="col-12">
-                                <div class="form-group">
-                                    <label for="image">Image</label>
-                                    <input id="image" class="form-control" type="file" name="image" >
-                                </div>
-                            </div>
-                                    <div class="modal-footer">
-                                        
-                                        <button type="submit" name="update_job" class="btn btn-primary">Update job </button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="form-group">
+                                                                                        <label for="name">courses</label>
+                                                                                        <textarea id="editor_courses<?= $result['job_id'] ?>" class="form-control" type="text" name="courses" required> <?php echo $result['courses'] ?></textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            
+                                                                                <div class="col-12">
+                                                                        <div class="form-group">
+                                                                            <label for="image">Image</label>
+                                                                            <input id="image" class="form-control" type="file" name="image" >
+                                                                        </div>
+                                                                    </div>
+                                                                            <div class="modal-footer">
+                                                                                
+                                                                                <button type="submit" name="update_job" class="btn btn-primary">Update job </button>
+                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            </div>
 
-                                </div>
+                                                                        </div>
 
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                 <?php
                                                 }
                                                 ?>
@@ -354,8 +360,17 @@ if (!isset($_SESSION['admin_id'])) {
 
     <?php include('includes/scripts.php') ?>
 
+    <script>
+            $('.btnEdit').on('click', function(event){
+                let id = event.currentTarget.attributes.id.value;
+                console.log(event.currentTarget.attributes.id.value)
+                ClassicEditor.create(document.querySelector(`#editor_description${id}`));
+                ClassicEditor.create(document.querySelector(`#editor_soft${id}`));
+                ClassicEditor.create(document.querySelector(`#editor_technical${id}`));
+                ClassicEditor.create(document.querySelector(`#editor_courses${id}`));
+            })
 
-</body>
+            </script></body>
 <!-- END: Body-->
 
 </html>

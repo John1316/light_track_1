@@ -13,10 +13,10 @@
   ClassicEditor.create(document.querySelector("#editor2"));
   ClassicEditor.create(document.querySelector("#editor3"));
   ClassicEditor.create(document.querySelector("#editor4"));
-  ClassicEditor.create(document.querySelector("#editor5"));
-  ClassicEditor.create(document.querySelector("#editor6"));
-  ClassicEditor.create(document.querySelector("#editor7"));
-  ClassicEditor.create(document.querySelector("#editor8"));
+  // ClassicEditor.create(document.querySelector("#editor5"));
+  // ClassicEditor.create(document.querySelector("#editor6"));
+  // ClassicEditor.create(document.querySelector("#editor7"));
+  // ClassicEditor.create(document.querySelector("#editor8"));
 
 
 })(window);
