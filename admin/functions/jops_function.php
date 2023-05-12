@@ -2,11 +2,11 @@
 if(isset($_POST['add_job'])){
     $sub_id = $_POST['sub_id'];
     $title = $_POST['title'];
-    $description = $_POST['description'];
-    $soft_skills = $_POST['soft_skills'];
-    $technical_skills = $_POST['technical_skills'];
+    $description =mysqli_real_escape_string($con,$_POST['description']);
+    $soft_skills = mysqli_real_escape_string($con,$_POST['soft_skills']);
+    $technical_skills = mysqli_real_escape_string($con,$_POST['technical_skills']);
     $average_salary = $_POST['average_salary'];
-    $courses = $_POST['courses'];
+    $courses = mysqli_real_escape_string($con,$_POST['courses']);
     $image_name = time() . '-' . $_FILES['image']['name'];
     $image_dirction = '../images/';
     $image_target = $image_dirction . basename($image_name);
@@ -36,12 +36,12 @@ if(isset($_POST['update_job'])){
     $id = $_POST['job_id'];
     $sub_id = $_POST['sub_id'];
     $title = $_POST['title'];
-    $description = $_POST['description'];
-    $soft_skills = $_POST['soft_skills'];
-    $technical_skills = $_POST['technical_skills'];
+    $description = mysqli_real_escape_string($con , $_POST['description']);
+    $soft_skills = mysqli_real_escape_string($con ,$_POST['soft_skills']);
+    $technical_skills = mysqli_real_escape_string($con ,$_POST['technical_skills']);
     $average_salary = $_POST['average_salary'];
-    $courses = $_POST['courses'];
-    $respons = $_POST['respons'];
+    $courses = mysqli_real_escape_string($con ,$_POST['courses']);
+    // $respons = $_POST['respons'];
     $image_name = time() . '-' . $_FILES['image']['name'];
     $image_dirction = '../images/';
     $image_target = $image_dirction . basename($image_name);
