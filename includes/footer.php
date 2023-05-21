@@ -1,30 +1,33 @@
 
-<footer class="footer-area pt-100 pb-70">
+<footer class="footer-area pl-45 pb-20">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-sm-6">
-						<div class="footer-widget">
+						<div class="footer-widget pl-20 pt-5">
 							<div class="footer-logo">
 								<a href="index.php">
 									<img src="assetss/img/logo.png" alt="logo">
 								</a>
 							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget pl-20 pt-5">
+						<p>Our idea aims to provide a platform that contains a full experience regarding the service of wanting information directed towards a certain career path.</p>
 
-							<p>Our idea aims to provide a platform that contains a full experience regarding the service of wanting information directed towards a certain career path.</p>
-
-							<div class="footer-social">
-								<a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
-								<a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
-								<a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a>
-								<a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
-							</div>
+						<div class="footer-social">
+							<a href="#" target="_blank"><i class='bx bxl-facebook'></i></a>
+							<a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+							<a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a>
+							<a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
+						</div>
 						</div>
 					</div>
 
 					
 
 					<div class="col-lg-3 col-sm-6">
-						<div class="footer-widget pl-60">
+						<div class="footer-widget pl-20 pt-5">
 							<h3>Quick Links</h3>
 							<ul>
 								<li>
@@ -56,6 +59,11 @@
 										<i class='bx bx-chevrons-right bx-tada'></i>
 										business majors
 									</a>
+								<li>
+									<a href="faculty.php">
+										<i class='bx bx-chevrons-right bx-tada'></i>
+										Faculties
+									</a>
 								</li>
 								<li>
 									<a href="contact.php">
@@ -68,7 +76,7 @@
 					</div>
 
 					<div class="col-lg-3 col-sm-6">
-						<div class="footer-widget footer-info">
+						<div class="footer-widget footer-info pl-20 pt-5">
 							<h3>Information</h3>
 							<ul>
 								<li>

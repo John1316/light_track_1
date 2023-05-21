@@ -3,16 +3,16 @@
             <!-- Menu For Mobile Device -->
             <div class="mobile-nav">
                 <a href="home.php" class="logo">
-                    <img src="assetss/img/logo.png"alt="logo" height="455px" width="100px">
+                    <img src="assetss/img/logo.png"alt="logo" height="45px">
                 </a>
             </div>
         
             <!-- Menu For Desktop Device -->
-            <div class="main-nav">
+            <div class="main-nav pl-20 pt-3 py-0">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="home.php">
-                            <img src="assetss/img/logo.png" alt="logo" class="img-fluid"  height="400px" width="300px">
+                            <img src="assetss/img/logo.png" alt="logo" class="img-fluid" >
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <?php if(isset($_SESSION['user_id'])){ ?> 
@@ -71,7 +71,7 @@
                                         <a href="#" class="nav-link dropdown-toggle"><?= $_SESSION['first_name']?> <?= $_SESSION['last_name']?>  </a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item">
-                                                <a href="logout.php" class="nav-link">Profile</a>
+                                                <a href="account.php" class="nav-link">Profile</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="logout.php" class="nav-link">Logout</a>
@@ -89,7 +89,7 @@
                             </ul>
                             <ul class="navbar-nav m-auto">
                                 <li class="nav-item">
-                                    <a href="my-requests.php" class="nav-link ">My requests</a>
+                                    <a href="my-requests.php" class="nav-link ">Schedule</a>
                                 </li>
                                 
                             </ul>

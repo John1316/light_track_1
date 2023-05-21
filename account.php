@@ -81,7 +81,7 @@
                                     if($results['status'] == 1){
                                         $status ="<span class='btn btn-success'>Accepted</span>";
                                     }else{
-                                        $status ="<span class='btn btn-warning'>Warning</span>";
+                                        $status ="<span class='btn btn-warning'>Waiting</span>";
 
                                     }
                                 ?>

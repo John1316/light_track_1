@@ -7,11 +7,15 @@ if(isset($_POST['add_consultation'])){
     $email = $_POST['email'];
     $preferred_date = $_POST['preferred_date'];
     $preferred_time = $_POST['preferred_time'];
-    $screenshot = $_POST['screenshot'];
+    $type = $_POST['type'];
     $session_fees = $_POST['session_fees'];
     $status = $_POST['status'];
+    $image_name = time() . '-' . $_FILES['screenshot']['name'];
+    $image_dirction = '../images/';
+    $image_target = $image_dirction . basename($image_name);
+    move_uploaded_file($_FILES['screenshot']['tmp_name'] ,$image_target );
 
-    $insert_consultation = "INSERT INTO `consultations` (`user_id`, `advisor_id`, `session_field`, `email`,`preferred_date`, `preferred_time`, `screenshot`, `session_fees`, `status`) VALUES ('$user_id', '$advisor_id', '$session_field','$email', '$preferred_date', '$preferred_time', '$screenshot', '$session_fees', '$status')";
+    $insert_consultation = "INSERT INTO `consultations` (`user_id`, `advisor_id`, `session_field`, `email`,`preferred_date`, `preferred_time`,`type`, `screenshot`, `session_fees`, `status`) VALUES ('$user_id', '$advisor_id', '$session_field','$email', '$preferred_date', '$preferred_time','$type', '$image_name', '$session_fees', '$status')";
     $consultation_query = mysqli_query($con, $insert_consultation) or die('Error in insert'.mysqli_error($con));
 
     if(!$consultation_query){
@@ -42,13 +46,20 @@ if(isset($_POST['update_consultation'])){
     $email = $_POST['email'];
     $preferred_date = $_POST['preferred_date'];
     $preferred_time = $_POST['preferred_time'];
-    $screenshot = $_POST['screenshot'];
+    $type = $_POST['type'];
     $session_fees = $_POST['session_fees'];
     $status = $_POST['status'];
-
-    $update_consultation = "UPDATE `consultations` SET `user_id`='$user_id', `advisor_id`='$advisor_id', `session_field`='$session_field', `email`='$email', `preferred_date`='$preferred_date', `preferred_time`='$preferred_time', `screenshot`='$screenshot', `session_fees`='$session_fees', `status`='$status' WHERE `consultation_id`='$id' ";
-
+    $image_name = time() . '-' . $_FILES['screenshot']['name'];
+    $image_dirction = '../images/';
+    $image_target = $image_dirction . basename($image_name);
+    move_uploaded_file($_FILES['screenshot']['tmp_name'] ,$image_target );
+    if(empty($_FILES['screenshot']['name'])){
+    $update_consultation = "UPDATE `consultations` SET `user_id`='$user_id', `advisor_id`='$advisor_id', `session_field`='$session_field', `email`='$email', `preferred_date`='$preferred_date', `preferred_time`='$preferred_time',`type`='$type',`session_fees`='$session_fees', `status`='$status' WHERE `consultation_id`='$id' ";
     $update_query =mysqli_query($con, $update_consultation) or die('Error in update'.mysqli_error($con));
+}else{
+    $update_consultation = "UPDATE `consultations` SET `user_id`='$user_id', `advisor_id`='$advisor_id', `session_field`='$session_field', `email`='$email', `preferred_date`='$preferred_date', `preferred_time`='$preferred_time',`type`='$type', `session_fees`='$session_fees', `status`='$status',`screenshot`='$image_name' WHERE `consultation_id`='$id' ";
+    $update_query =mysqli_query($con, $update_consultation) or die('Error in update'.mysqli_error($con));
+}
     if(!$update_query){
         die('Error in update'.mysqli_error($con));
     }else{

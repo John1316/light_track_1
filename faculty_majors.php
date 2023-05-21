@@ -56,7 +56,37 @@ require_once('functions/connection.php');
             </div>
         </section>
         <!-- Page Title End -->
+		<section class="blog-details-area ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-widget blog-search">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <button>
+                                        <i class='bx bx-search-alt-2'></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+      </section>
+	  <?php
+	  if (isset($_POST['btn_search'])) {
+  ?>
+  
+<?php
+$st=$_POST['srh'];
 
+  $qry="SELECT * FROM `faculty_majors` WHERE `name` LIKE '%$st%' ";
+  $rst=mysqli_query($con,$qry);
+  while ($data=mysqli_fetch_array($rst)) {
+    ?>
+ 
+    <?php
+  }
+}
+?>
 		<!-- Blog Section Start -->
 		<section class="blog-section blog-style-two pt-100 pb-70">
 			<div class="container">
@@ -76,7 +106,7 @@ require_once('functions/connection.php');
 							
 							<div class="blog-text">
 							
-							<a href="faculty_majors.php?faculty_id=<?php echo $result['faculty_id'] ?>" class="blog-btn">
+								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
 									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
                                 </a>
 								<h3>

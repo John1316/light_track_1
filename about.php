@@ -31,15 +31,7 @@ require_once('connectionproject.php');
 		</div>
 		<!-- Pre-loader End -->
         <?php include('includes/header.php') ?>
-        <!-- Navbar Area Start -->
-        <div class="navbar-area">
-            <!-- Menu For Mobile Device -->
-            <div class="mobile-nav">
-                <a href="index.php" class="logo">
-                    <img src="assetss/img/logo.png" alt="logo" height="45px" >
-                </a>
-            </div>
-     </div>
+       
         <!-- Page Title Start -->
         <section class="page-title title-bg1">
             <div class="d-table">
@@ -120,16 +112,15 @@ require_once('connectionproject.php');
                     <div class="col-lg-4 col-sm-6">
                         <div class="choose-card">
                             <i class="flaticon-research"></i>
-                            <h3>all information needed in one place</h3>
+                            <h3>All information needed in one place</h3>
                             <p>
                                 Choose our website for all the career information you need to decide your career path just in one place.
                             </p>
                         </div>
                     </div>
-
                     <div class="col-lg-4 col-sm-6">
                         <div class="choose-card">
-                            <i class="flaticon-research"></i>
+                            <i class="flaticon-results"></i>
                             <h3>Interested events and courses</h3>
                             <p> Advance your career with our events and courses designed to enhance your skills. 
                                 
@@ -139,11 +130,36 @@ require_once('connectionproject.php');
 
                     <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
                         <div class="choose-card">
-                            <i class="flaticon-employee"></i>
-                            <h3>advisor and consultation</h3>
+                            <i class="flaticon-consultation"></i>
+                            <h3>Advisor and consultation</h3>
                             <p>Connect with experienced advisors for personalized guidance and support in achieving your career goals.   </p>
                         </div>
                     </div>
+                
+                    <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+                        <div class="choose-card">
+                            <i class="flaticon-graduation-cap"></i>
+                            <h3>Educational institutions</h3>
+                            <p>we provide partnership packages to let our audience know more about your available majors/courses.</p>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+                        <div class="choose-card">
+                            <i class="flaticon-discussion"></i>
+                            <h3>Expanded knowledge</h3>
+                            <p>with us you get to take the extra step and look beyond just the general major.  </p>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
+                        <div class="choose-card">
+                            <i class="flaticon-computer"></i>
+                            <h3>Simple process</h3>
+                            <p>find the knowledge you're looking for and book a session it's that simple just a click away. </p>
+                        </div>
+                    </div>
+                  
                 </div>
             </div>
         </section>
@@ -164,7 +180,7 @@ require_once('connectionproject.php');
                             </p>
 
                             <div class="theme-btn">
-                                <a href="#" class="default-btn">Checkout More</a>
+                                <a href="resg-adv.php" class="default-btn">Checkout More</a>
                             </div>
                         </div>
                     </div>
