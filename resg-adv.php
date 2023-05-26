@@ -1,19 +1,20 @@
 <?php
-require_once('functions/connection.php');
+require_once('connectionproject.php');
 
 
 if(isset($_POST['submit'])){
-    $user_id = $_POST['user_id'];
-    $advisor_id = $_POST['advisor_id'];
-    $session_field = $_POST['session_field'];
-    $session_field = $_POST['email'];
+    $sub_id = $_POST['sub_id'];
+    // $session_field = $_POST['session_field'];
+    // $session_field = $_POST['email'];
     $preferred_date = $_POST['preferred_date'];
     $preferred_time = $_POST['preferred_time'];
-    $screenshot = $_POST['screenshot'];
-    $session_fees = $_POST['session_fees'];
-    $status = $_POST['status'];
+    $screenshot_name = time() .'-' . $_FILES['screenshot']['name'];
+    $target_dir = 'images/';
+    $target_base = $target_dir . basename($screenshot_name);
+    move_uploaded_file($_FILES['screenshot']['tmp_name'], $target_base);
+    // $session_fees = $_POST['session_fees'];
 
-    $insert_consultation = "INSERT INTO `consultations` (`user_id`, `advisor_id`, `session_field`,`email`, `preferred_date`, `preferred_time`, `screenshot`, `session_fees`, `status`) VALUES ('$user_id', '$advisor_id', '$session_field','$email', '$preferred_date', '$preferred_time', '$screenshot', '$session_fees', '$status')";
+    $insert_consultation = "INSERT INTO `consultations` (`user_id`,`sub_id`, `preferred_date`, `preferred_time`, `screenshot`, `session_fees`, `status`) VALUES(".$_SESSION['user_id'].", '$sub_id', '$preferred_date', '$preferred_time', '$screenshot_name', '250', '0')";
     $consultation_query = mysqli_query($con, $insert_consultation) or die('Error in insert'.mysqli_error($con));
 
     if(!$consultation_query){
@@ -92,7 +93,7 @@ if(isset($_POST['submit'])){
             </div>
         
             <!-- Menu For Desktop Device -->
-            <?php include('includes/header_1.php') ?>
+            <?php include('includes/header.php') ?>
 
         <!-- Navbar Area End -->
 <!-- Page Title Start -->
@@ -124,7 +125,7 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
 
-            <form class="job-post-from col-lg-6">
+            <form class="job-post-from col-lg-6" method="POST" enctype="multipart/form-data">
                 <h2>Fill Up Your Booking</h2>
                 <div class="row">
                     <div class="container">
@@ -135,7 +136,7 @@ if(isset($_POST['submit'])){
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" id="exampleInput2" name="user_id" placeholder="Enter Your Name" required>
+                            <input type="text" class="form-control" id="exampleInput2" name="name" placeholder="Enter Your Name" required>
                         </div>
                     </div>
                     
@@ -164,7 +165,7 @@ if(isset($_POST['submit'])){
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Screenshot of payment</label>
-                            <input type="text" class="form-control" id="exampleInput2" name="screenshot" required>
+                            <input type="file" class="form-control" id="exampleInput2" name="screenshot" required>
                         </div>
                     </div> 
 
@@ -197,9 +198,15 @@ if(isset($_POST['submit'])){
                         </div></div></div>
     
                         <div class="col-md-12 text-center">
-                        <button type="submit" class="post-btn" name="book-btn">
+                            <?php if(isset($_SESSION['user_id'])) { ?>
+                        <button type="submit" class="post-btn" name="submit">
                             book now
                         </button>
+                        <?php } else { ?>
+                            <a href="signin_user.php" class="post-btn">
+                            book now
+                        </a>
+                            <?php } ?>
                     </div>
                     <p><br>we will send the confirmation message by email or phone number ,so please check it within the 24h</p>
  

@@ -12,3 +12,6 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .card-content .btn-info{
 background-color: #00E7F7 ;
 }
+form textarea.form-control{
+	height: 150px !important;
+}

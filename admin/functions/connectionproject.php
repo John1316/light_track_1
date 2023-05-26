@@ -2,7 +2,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="light_track";
+$dbname="light_track2";
 
 $con=mysqli_connect($servername,$username,$password,$dbname);
 if(!$con){
