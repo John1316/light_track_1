@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
          mysqli_query($con, $insert);
       echo 'advisor inserted';
 
-      header('location:signin_user.php');
+      header('location:signin_advisor.php');
    }
 
 };

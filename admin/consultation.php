@@ -87,6 +87,7 @@
                                                 <th>Session Field</th>
                                                 <th>Preferred Date</th>
                                                 <th>Preferred Time</th>
+                                                <th>Meeting Type</th>
                                                 <th>Screenshot</th>
                                                 <th>Payment</th>
                                                 <th>Status</th>
@@ -95,10 +96,7 @@
 
                                             <tbody>
                                             <?php 
-                                                $consultation = "SELECT consultations.consultation_id, consultations.user_id ,  advisors.advisor_id, advisors.name as advisor_name, CONCAT(users.first_name, ' ', users.last_name) as user_name, consultations.session_field,  consultations.email, consultations.preferred_date, consultations.preferred_time, consultations.screenshot, consultations.session_fees, consultations.status 
-                                                FROM consultations 
-                                                INNER JOIN users ON users.user_id = consultations.user_id 
-                                                INNER JOIN advisors ON advisors.advisor_id = consultations.advisor_id;";  
+                                                $consultation ="SELECT consultations.* , advisors.name AS advisor_name , users.first_name AS user_name , sub_majors.title AS major_title FROM `consultations` left JOIN advisors on advisors.advisor_id = consultations.advisor_id left join users on users.user_id = consultations.user_id left join sub_majors on sub_majors.sub_id = consultations.sub_id";
                                                 $consultation_query = mysqli_query($con, $consultation) or die('consultation_error'.mysqli_error($con));
                                                 while($result = mysqli_fetch_array($consultation_query)){
                                                 ?>
@@ -110,17 +108,13 @@
                                                     <td><?php echo $result['session_field'] ?></td>    
                                                     <td style= "white-space:nowrap;text-overflow: ellipsis;
                                                     overflow: hidden;"  class="text-bold-500"><?php echo $result['preferred_date'] ?></td>
-                                                    <td><?php echo $result['preferred_time'] ?></td>  
-                                                    <td><?php echo $result['screenshot'] ?></td>  
+                                                    <td><?php echo $result['preferred_time'] ?></td>
+                                                    <td><?php echo $result['type'] ?></td>   
+                                                    <td><img width="100px" height="100px" style="object-fit: contain;" src="../images/<?php echo $result['screenshot']; ?>" alt=""></td>
                                                     <td><?php echo $result['session_fees'] ?></td>  
                                                     <td><?php echo $result['status'] ?></td> 
-                                                    <td class="d-flex">
-                                                    <button data-toggle="modal" data-target="#update_concultation<?php echo $result['consultation_id'] ?>" class="pl-0 btn btn-transparent"><i class="badge-circle badge-circle-light-secondary bx bx-edit font-medium-1"></i></button>
-                                                        <form method="post">
-                                                            <input type="hidden" name="consultation_id" value="<?php echo $result['consultation_id'] ?>">
-                                                            <button name="delete_consultation" type="submit" class="pl-0 btn btn-transparent" onclick="return confirm('Are you sure you want to delete this consultation?')"><i class="badge-circle badge-circle-light-secondary bx bx-trash font-medium-1"></i></button>
-                                                        </form>
-                                                    </td>
+                              
+                                                    
                                                 </tr>
 
                                                 <div id="update_concultation<?php echo $result['consultation_id'] ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
@@ -133,7 +127,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form method="POST">
+                                                                <form method="POST" enctype="multipart/form-data">
                                                                     <div class="row">
                                                                         <input type="hidden" name="consultation_id" id="consultation_id" value="<?php echo $result['consultation_id'] ?>" />
                                                                         <div class="col-12">
@@ -192,10 +186,17 @@
                                                                                 <input id="preferred_date" class="form-control" value="<?php echo $result['preferred_date'] ?>" type="date" name="preferred_date" required>
                                                                             </div>
                                                                         </div>
+                                                                        
                                                                         <div class="col-12">
                                                                             <div class="form-group">
                                                                                 <label for="preferred_time">Preferred Time</label>
                                                                                 <input id="preferred_time" class="form-control" value="<?php echo $result['preferred_time'] ?>" type="time" name="preferred_time" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="form-group">
+                                                                                <label for="preferred_date">Type</label>
+                                                                                <input id="preferred_date" class="form-control" value="<?php echo $result['type'] ?>" type="date" name="type" required>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
@@ -321,6 +322,12 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
+                                <label for="preferred_time">Type</label>
+                                <input id="preferred_time" class="form-control" type="type" name="type" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
                                 <label for="screenshot">Screenshot</label>
                                 <input id="screenshot" class="form-control" type="text" name="screenshot" required>
                             </div>
@@ -335,9 +342,9 @@
                             <div class="form-group">
                                 <label for="status">Status</label>
                                 <select id="status" class="form-control" name="status" required>
-                                    <option value="0">Pending</option>
-                                    <option value="1">Accepted</option>
-                                    <option value="2">Rejected</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Accepted">Accepted</option>
+                                    <option value="Rejected">Rejected</option>
                                 </select>
                             </div>
                         </div>

@@ -187,7 +187,7 @@ if (!isset($_SESSION['admin_id'])) {
                                                                             <div class="col-12">
                                                                                 <div class="form-group">
                                                                                     <label for="name">Description</label>
-                                                                                    <textarea id="editor_description<?= $result['job_id'] ?>" class="form-control" type="text" name="description" required><?php echo $result['description'] ?></textarea>
+                                                                                    <textarea id="editor_description<?= $result['job_id'] ?>" class="form-control" type="text"  name="description" required><?php echo $result['description'] ?></textarea>
                                                                                 </div>
                                                                             </div>
 

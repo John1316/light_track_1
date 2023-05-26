@@ -56,7 +56,7 @@
 						Dashboard</h2>
                     <ul>
                         <li>
-                            <a href="index.php">Dashbiard</a>
+                            <a href="index.php">Dashboard</a>
                         </li>
                        
                     </ul>
@@ -74,8 +74,8 @@
 				<section class="job-style-two job-list-section pt-100 pb-70">
 					<div class="container">
 						<div class="section-title text-center">
-							<h1> Events You May Be Interested In</h1>
-							<p>Attending career-related events and sessions can be crucial for professional development. They provide opportunities to network, learn new skills, and stay up-to-date on industry trends, which can ultimately help advance your career</p>
+							<h1>Dashbord of Advisors</h1>
+							<p>This dashboard shows the sessions and consultations</p>
 						</div>
 		
 						<div class="row">

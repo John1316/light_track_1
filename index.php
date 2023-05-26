@@ -46,7 +46,7 @@ require_once( 'connectionproject.php');
                             <ul>we offer data on all you may need to know more about:
                                 <li>business majors</li>
                                 <li>IT majors</li>
-                                <li>faculties</li>
+                                  <li>faculties</li>
                                 <li>and offer services to connect you with advisors personaly</li>
                             </ul>
 
@@ -79,7 +79,7 @@ require_once( 'connectionproject.php');
 
                     <div class="col-lg-6">
                         <div class="discover-text">
-                            <h2>Guiding Your Career Path: Choosing the Right Faculty and College"</h2>
+                            <h2>Guiding Your Career Path: Choosing the Right Faculty and College</h2>
                             <p> Choosing the right faculty and college is crucial for determining your career path. Start by identifying your interests and researching faculties that offer programs related to your field of interest. Look beyond reputation and consider factors such as location, campus culture, and support services. This will help you make an informed decision and set you on the path towards a successful career.</p>
                                 
                                 <p>Look beyond reputation and consider factors such as location, campus culture, and support services. This will help you make an informed decision and set you on the path towards a successful career.</p>
@@ -97,153 +97,7 @@ require_once( 'connectionproject.php');
         <!-- Discover Section End -->
                 <!-- Job Category Section Start -->
 
-        <!-- Job Section End -->   
-        <section class="job-style-two pt-100 pb-70">
-            <div class="container">
-                <div class="section-title text-center">
-                    <h2>Session & Events You May Be Interested In</h2>
-                    <p>we offer sessions and courses that may help your career path </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="job-card-two">
-                            <div class="row align-items-center">
-                                <div class="col-md-1">
-                                  
-                                        <a href="https://www.facebook.com/events/609049797584972"></a>
-                                        <img src="assetss/img/events/2.jpg" alt="logo" height="100px" width="700">
-                                 
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="job-info">
-                                        <h3>
-                                            <a href="https://www.facebook.com/events/609049797584972">MENA Career Summit</a>
-                                        </h3>
-                                        <ul>                                          
-                                            
-                                            <li>
-                                                <i class='bx bx-money' ></i>
-                                                $
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-location-plus'></i>
-                                                Greek campus
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-stopwatch' ></i>
-                                                6 april
-                                            </li>
-                                        </ul>
-
-                                        <p>MENA Career Summit 2022 is the way to unleash the space for Techies & Digital Marketing enthusiasts. We create a mindful up-to-date market by connecting MENA minds, sharing their struggles, successes, journeys, and landing better opportunities.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="theme-btn text-end">
-                                        <a href="femPower_1-25-1024x620.jpg" class="default-btn">
-                                            Browse more
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="job-card-two">
-                            <div class="row align-items-center">
-                                <div class="col-md-1">
-                                    
-                                        <a href="job-details.html"></a>
-                                        <img src="assetss/img/events/femPower_1-25-1024x620.jpg" alt="logo"height="100px" width="700">
-
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="job-info">
-                                        <h3>
-                                            <a href="https://www.facebook.com/FEMpowersummit?mibextid=ZbWKwL">
-                                                FEMpower Summit</a>
-                                        </h3>
-                                        <ul>                                          
-                                            
-                                            <li>
-                                                <i class='bx bx-money' ></i>
-                                                $
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-location-plus'></i>
-                                                Greek campus
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-stopwatch' ></i>
-                                                17 march
-                                            </li>
-                                        </ul>
-
-                                        <p>FEMpower is an event that aims to shed new light on everything related to women in the workplace!</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="theme-btn text-end">
-                                        <a href="https://www.facebook.com/FEMpowersummit?mibextid=ZbWKwL" class="default-btn">
-                                            Browse more
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                                
-                    <div class="col-lg-12">
-                        <div class="job-card-two">
-                            <div class="row align-items-center">
-                                <div class="col-md-1">
-                                   
-                                        <a href="https://career-180.com/en/events/ecs-2023/register"></a>
-                                        <img src="assetss/img/events/4.png" alt="logo" height="100px" width="700">
-                                 
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="job-info">
-                                        <h3>
-                                            <a href="https://career-180.com/en/events/ecs-2023/register">Egypt Career Summit 2023</a>
-                                        </h3>
-                                        <ul>                                          
-                                            
-                                            <li>
-                                                <i class='bx bx-money' ></i>
-                                                $
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-location-plus'></i>
-                                                Greek campus
-                                            </li>
-                                            <li>
-                                                <i class='bx bx-stopwatch' ></i>
-                                                26 march
-                                            </li>
-                                        </ul>
- 
-                                        <p>Join the biggest career development and recruitment event in Egypt, to meet 350+ Experts, 75+ corporates and startups providing 1000+ vacancies !</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="theme-btn text-end">
-                                        <a href="https://career-180.com/en/events/ecs-2023/register" class="default-btn">
-                                            Browse more
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-        <!-- Job Section End -->
+       
 
 
         <!-- Apps Section Start -->
