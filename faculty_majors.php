@@ -1,117 +1,111 @@
 <?php
 require_once('functions/connection.php');
+if(isset($_POST['submit_search'])){
+	$search_keyword = $_POST['search_keyword'];
+	header("location: faculty_majors.php?faculty_id=".$_GET['faculty_id']."&search_keyword=".$search_keyword);
+}
 ?>
 <!doctype html>
 <html lang="zxx">
-    <head>
-		<?php include('includes/head.php') ?>
-    </head>
 
-    <body>
-        
-        <!-- Pre-loader Start -->
-		<div class="loader-content">
-            <div class="d-table">
-                <div class="d-table-cell">
-					<div class="sk-circle">
-						<div class="sk-circle1 sk-child"></div>
-						<div class="sk-circle2 sk-child"></div>
-						<div class="sk-circle3 sk-child"></div>
-						<div class="sk-circle4 sk-child"></div>
-						<div class="sk-circle5 sk-child"></div>
-						<div class="sk-circle6 sk-child"></div>
-						<div class="sk-circle7 sk-child"></div>
-						<div class="sk-circle8 sk-child"></div>
-						<div class="sk-circle9 sk-child"></div>
-						<div class="sk-circle10 sk-child"></div>
-						<div class="sk-circle11 sk-child"></div>
-						<div class="sk-circle12 sk-child"></div>
-					</div>
+<head>
+	<?php include('includes/head.php') ?>
+</head>
+
+<body>
+
+	<!-- Pre-loader Start -->
+	<div class="loader-content">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="sk-circle">
+					<div class="sk-circle1 sk-child"></div>
+					<div class="sk-circle2 sk-child"></div>
+					<div class="sk-circle3 sk-child"></div>
+					<div class="sk-circle4 sk-child"></div>
+					<div class="sk-circle5 sk-child"></div>
+					<div class="sk-circle6 sk-child"></div>
+					<div class="sk-circle7 sk-child"></div>
+					<div class="sk-circle8 sk-child"></div>
+					<div class="sk-circle9 sk-child"></div>
+					<div class="sk-circle10 sk-child"></div>
+					<div class="sk-circle11 sk-child"></div>
+					<div class="sk-circle12 sk-child"></div>
 				</div>
 			</div>
 		</div>
-		<!-- Pre-loader End -->
+	</div>
+	<!-- Pre-loader End -->
 
-        <!-- Navbar Area Start -->
-		<?php include('includes/header.php') ?>
+	<!-- Navbar Area Start -->
+	<?php include('includes/header.php') ?>
 
-        <!-- Navbar Area End -->
-        <!-- Page Title Start -->
-        <section class="page-title title-bg21">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <h2>Sub majors</h2>
-                    <ul>
-                        <li>
-                            <a href="index.php">Home</a>
-                        </li>
-                        <li>Sub majors</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </section>
-        <!-- Page Title End -->
-		<section class="blog-details-area ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="blog-widget blog-search">
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <button>
-                                        <i class='bx bx-search-alt-2'></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-      </section>
-	  <?php
-	  if (isset($_POST['btn_search'])) {
-  ?>
-  
-<?php
-$st=$_POST['srh'];
+	<!-- Navbar Area End -->
+	<!-- Page Title Start -->
+	<section class="page-title title-bg21">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<h2>Sub majors</h2>
+				<ul>
+					<li>
+						<a href="index.php">Home</a>
+					</li>
+					<li>Sub majors</li>
+				</ul>
+			</div>
+		</div>
+		<div class="lines">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+	</section>
+	<!-- Page Title End -->
+	<!-- <section class="blog-details-area ptb-100">
+		<div class="container">
 
-  $qry="SELECT * FROM `faculty_majors` WHERE `name` LIKE '%$st%' ";
-  $rst=mysqli_query($con,$qry);
-  while ($data=mysqli_fetch_array($rst)) {
-    ?>
- 
-    <?php
-  }
-}
-?>
-		<!-- Blog Section Start -->
-		<section class="blog-section blog-style-two pt-100 pb-70">
-			<div class="container">
-				<div class="section-title text-center">
-					<h2>Select Faculty</h2>
-					<p>Selecting the appropriate career path, whether in business or IT, is crucial for achieving long-term professional success, job contentment, and personal fulfillment in life.</p>
+		</div>
+	</section> -->
+	
+	<!-- Blog Section Start -->
+	<section class="blog-section blog-style-two pt-100 pb-70">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>Select Faculty</h2>
+				<p>Selecting the appropriate career path, whether in business or IT, is crucial for achieving long-term professional success, job contentment, and personal fulfillment in life.</p>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-4">
+					<div class="blog-widget blog-search">
+						<form method="POST">
+							<div class="form-group">
+								<input type="text" name="search_keyword" class="form-control" placeholder="Search">
+								<button type="submit" name="submit_search">
+									<i class='bx bx-search-alt-2'></i>
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
-
-				<div class="row">
-					<?php 
-					$submajors_stat = "SELECT * FROM `faculty_majors` where `faculty_id`=".$_GET['faculty_id']." ";
-					$sub_majors_query = mysqli_query($con, $submajors_stat) or die('Error in mysql'. mysqli_error($con));
-					while($result = mysqli_fetch_array($sub_majors_query)){
-					?>
+			</div>
+			<div class="row">
+				<?php
+				if(isset($_GET['search_keyword'])){
+					$submajors_stat = "SELECT * FROM `faculty_majors` where `faculty_id`=".$_GET['faculty_id']." AND `name` LIKE '%".$_GET['search_keyword']."%' ";
+				$sub_majors_query = mysqli_query($con, $submajors_stat) or die('Error in mysql' . mysqli_error($con));
+				while ($result = mysqli_fetch_array($sub_majors_query)) {
+				?>
 					<div class="col-lg-4 col-sm-6">
 						<div class="blog-card">
-							
+
 							<div class="blog-text">
-							
+
 								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
 									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
-                                </a>
+								</a>
 								<h3>
 									<?php echo $result['name'] ?>
-									
+
 								</h3>
 
 								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
@@ -122,9 +116,38 @@ $st=$_POST['srh'];
 						</div>
 					</div>
 					<?php
-					}
-					?>
-<!-- 
+
+				}}
+					else{
+				$submajors_stat = "SELECT * FROM `faculty_majors` where `faculty_id`=" . $_GET['faculty_id'] . " ";
+				$sub_majors_query = mysqli_query($con, $submajors_stat) or die('Error in mysql' . mysqli_error($con));
+				while ($result = mysqli_fetch_array($sub_majors_query)) {
+				?>
+					<div class="col-lg-4 col-sm-6">
+						<div class="blog-card">
+
+							<div class="blog-text">
+
+								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
+									<img src="images/<?php echo $result['image'] ?>" alt="blog image" height="400" width="700">
+								</a>
+								<h3>
+									<?php echo $result['name'] ?>
+
+								</h3>
+
+								<a href="faculty_details.php?faculty_major_id=<?php echo $result['major_id'] ?>" class="blog-btn">
+									Read More
+									<i class='bx bx-plus bx-spin'></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				<?php
+				}
+				}
+				?>
+				<!-- 
 					<div class="col-lg-4 col-sm-6">
 						<div class="blog-card">
 							<div class="blog-img">
@@ -224,37 +247,38 @@ $st=$_POST['srh'];
 						</div>
 					</div> -->
 
-					
-                </div>
-                
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                <i class='bx bx-chevrons-left bx-fade-left'></i>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link active" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class='bx bx-chevrons-right bx-fade-right'></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+
 			</div>
-		</section>
-		<!-- Blog Section End -->        
 
-        <!-- Subscribe Section Start -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center">
+					<li class="page-item disabled">
+						<a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+							<i class='bx bx-chevrons-left bx-fade-left'></i>
+						</a>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link active" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">
+							<i class='bx bx-chevrons-right bx-fade-right'></i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+	<!-- Blog Section End -->
 
-        <!-- Subscribe Section End -->
+	<!-- Subscribe Section Start -->
 
-        <!-- Footer Section Start -->
-		<?php include('includes/footer.php') ?>
-		<?php include('includes/scripts.php') ?>
+	<!-- Subscribe Section End -->
 
-  	</body>
-</html> 
+	<!-- Footer Section Start -->
+	<?php include('includes/footer.php') ?>
+	<?php include('includes/scripts.php') ?>
+
+</body>
+
+</html>

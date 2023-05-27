@@ -14,8 +14,12 @@ if(isset($_POST['submit'])){
     $target_base = $target_dir . basename($screenshot_name);
     move_uploaded_file($_FILES['screenshot']['tmp_name'], $target_base);
     // $session_fees = $_POST['session_fees'];
-    
-    $insert_consultation = "INSERT INTO `consultations` (`user_id`,`sub_id`,`email`, `preferred_date`, `preferred_time`, `screenshot`,`type` ,`session_fees`, `status`) VALUES(".$_SESSION['user_id'].", '$sub_id','$email', '$preferred_date', '$preferred_time', '$screenshot_name','$type', '250', '0')";
+    if($type == 'online_meeting'){
+        $insert_consultation = "INSERT INTO `consultations` (`user_id`,`sub_id`,`email`, `preferred_date`, `preferred_time`, `screenshot`,`type` ,`session_fees`, `status`) VALUES(".$_SESSION['user_id'].", '$sub_id','$email', '$preferred_date', '$preferred_time', '$screenshot_name','$type', '120', '0')";
+
+    }else{
+        $insert_consultation = "INSERT INTO `consultations` (`user_id`,`sub_id`,`email`, `preferred_date`, `preferred_time`, `screenshot`,`type` ,`session_fees`, `status`) VALUES(".$_SESSION['user_id'].", '$sub_id','$email', '$preferred_date', '$preferred_time', '$screenshot_name','$type', '135', '0')";
+    }
     $consultation_query = mysqli_query($con, $insert_consultation) or die('Error in insert'.mysqli_error($con));
 
     if(!$consultation_query){
@@ -151,9 +155,9 @@ if(isset($_POST['submit'])){
                                     <label>Type of meeting</label>
                                     <select class="form-control" type="text" name="type" required>
                                     <option value="">Select type of meeting</option>
-                                    <option data-display="online meeting">Online meeting</option>
-                                    <option value="offline meeting">Offline meeting</option>
-                                    <option value="Individual">Individual</option>
+                                    <option value="online_meeting">Online meeting</option>
+                                    <option value="offline_meeting">Offline meeting</option>
+                                    <!-- <option value="Individual">Individual</option> -->
                                     </select>
                                 </div>
                             </div>
