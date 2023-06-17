@@ -8,7 +8,7 @@ if(isset($_POST['add_sub_majors'])){
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
 
-    $insert_major = "INSERT INTO `sub_majors` (`title`,`major_id`,`image`) Values ('$name','$major_id','$image_name') ";
+    $insert_major = "INSERT INTO `sub_majors` (`title`,`major_id`,`image`,`admin_id`) Values ('$name','$major_id','$image_name', ".$_SESSION['admin_id'].") ";
     $majors_query = mysqli_query($con, $insert_major) or die('Error in insert'.mysqli_error($con));
 
     if(!$majors_query){
@@ -40,10 +40,10 @@ if(isset($_POST['update_sub_major'])){
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
     if(empty($_FILES['image']['name'])){
-        $update_sub_major = "UPDATE `sub_majors` SET  `title`=' $name ', `major_id`='$major_id' WHERE `sub_id`='$id' ";
+        $update_sub_major = "UPDATE `sub_majors` SET  `title`=' $name ', `major_id`='$major_id' , `admin_id`= ".$_SESSION['admin_id']." WHERE `sub_id`='$id' ";
         $update_query =mysqli_query($con, $update_sub_major) or die('Error in update'.mysqli_error($con));
     }else{
-        $update_sub_major = "UPDATE `sub_majors` SET  `title`=' $name ', `major_id`='$major_id',`image`= '$image_name'WHERE `sub_id`='$id' ";
+        $update_sub_major = "UPDATE `sub_majors` SET  `title`=' $name ', `major_id`='$major_id',`image`= '$image_name', `admin_id`= ".$_SESSION['admin_id']." WHERE `sub_id`='$id' ";
         $update_query =mysqli_query($con, $update_sub_major) or die('Error in update'.mysqli_error($con));
     }
     if(!$update_query){

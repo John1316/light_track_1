@@ -8,7 +8,7 @@ if(isset($_POST['add_event'])){
     $image_target = $image_dirction . basename($event_image);
     move_uploaded_file($_FILES['event_image']['tmp_name'] ,$image_target );
 
-    $insert_event = "INSERT INTO `events` (`event_name`,`event_image`,`event_link`,`introduction`) Values ('$event_name','$event_image','$event_link','$introduction') ";
+    $insert_event = "INSERT INTO `events` (`event_name`,`event_image`,`event_link`,`introduction`,`admin_id`) VALUES('$event_name','$event_image','$event_link','$introduction',".$_SESSION['admin_id'].") ";
     $event_query = mysqli_query($con, $insert_event) or die('Error in insert'.mysqli_error($con));
 
     if(!$event_query){
@@ -41,9 +41,9 @@ if(isset($_POST['update_event'])){
     $image_target = $image_dirction . basename($event_image);
     move_uploaded_file($_FILES['event_image']['tmp_name'] ,$image_target );
     if(empty($_FILES['event_image']['name'])){
-        $update_event = "UPDATE `events` SET `event_name`='$event_name', `event_link`='$event_link',`introduction`='$introduction' WHERE `event_id`='$id' ";
+        $update_event = "UPDATE `events` SET `event_name`='$event_name', `event_link`='$event_link',`admin_id`=".$_SESSION['admin_id']." , `introduction`='$introduction' WHERE `event_id`='$id' ";
     }else{
-        $update_event = "UPDATE `events` SET `event_name`='$event_name', `event_link`='$event_link', `event_image`='$event_image' WHERE `event_id`='$id' ";
+        $update_event = "UPDATE `events` SET `event_name`='$event_name', `event_link`='$event_link', `admin_id`=".$_SESSION['admin_id']." , `event_image`='$event_image' WHERE `event_id`='$id' ";
     }
     $update_query =mysqli_query($con, $update_event) or die('Error in update'.mysqli_error($con));
     if(!$update_query){

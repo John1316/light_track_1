@@ -10,7 +10,7 @@ if(isset($_POST['add_fauclty_major'])){
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
 
-    $insert_major = "INSERT INTO `faculty_majors` (`name`,`faculty_id`,`description`,`job_fields`,`image`) Values ('$name','$faculty_id','$description','$job_fields','$image_name') ";
+    $insert_major = "INSERT INTO `faculty_majors` (`name`,`faculty_id`,`description`,`job_fields`,`image`,`admin_id`) Values ('$name','$faculty_id','$description','$job_fields','$image_name',".$_SESSION['admin_id'].") ";
     $faculty_query = mysqli_query($con, $insert_major) or die('Error in insert'.mysqli_error($con));
 
     if(!$faculty_query){
@@ -44,10 +44,10 @@ if(isset($_POST['update_major'])){
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
     if(empty($_FILES['image']['name'])){
-        $update_faculty = "UPDATE `faculty_majors` SET  `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields' WHERE `major_id`='$id' ";
+        $update_faculty = "UPDATE `faculty_majors` SET `admin_id`=".$_SESSION['admin_id']." ,  `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields' WHERE `major_id`='$id' ";
         $update_query =mysqli_query($con, $update_faculty) or die('Error in update'.mysqli_error($con));
     }else{
-        $update_faculty = "UPDATE `faculty_majors` SET `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields',`image`='$image_name' WHERE `major_id`='$id' ";
+        $update_faculty = "UPDATE `faculty_majors` SET `admin_id`=".$_SESSION['admin_id']." , `faculty_id`= '$faculty_id',`name`='$name', `description`='$description',`job_fields`='$job_fields',`image`='$image_name' WHERE `major_id`='$id' ";
         $update_query =mysqli_query($con, $update_faculty) or die('Error in update'.mysqli_error($con));
     }
     if(!$update_query){

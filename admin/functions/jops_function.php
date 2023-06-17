@@ -11,7 +11,7 @@ if(isset($_POST['add_job'])){
     $image_dirction = '../images/';
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
-    $insert_jop="INSERT INTO  `jobs` (`sub_id`, `title`, `description`, `soft_skills`, `technical_skills`,`average_salary`,`courses`, `image`) VALUES ('$sub_id','$title','$description','$soft_skills','$technical_skills','$average_salary','$courses','$image_name')";
+    $insert_jop="INSERT INTO  `jobs` (`sub_id`, `title`, `description`, `soft_skills`, `technical_skills`,`average_salary`,`courses`, `image`,`admin_id`) VALUES ('$sub_id','$title','$description','$soft_skills','$technical_skills','$average_salary','$courses','$image_name',".$_SESSION['admin_id'].")";
     $jop_query = mysqli_query($con, $insert_jop) or die('Error in insert'.mysqli_error($con));
     if(!$jop_query){
         die('Error in insert'.mysqli_error($con));
@@ -47,10 +47,10 @@ if(isset($_POST['update_job'])){
     $image_target = $image_dirction . basename($image_name);
     move_uploaded_file($_FILES['image']['tmp_name'] ,$image_target );
     if(empty($_FILES['image']['name'])){
-        $update_job = "UPDATE `jobs` SET `sub_id`=$sub_id, `title`=' $title ',`description`='$description',`soft_skills`='$soft_skills',`technical_skills`='$technical_skills',`average_salary`='$average_salary',`courses`='$courses' WHERE `job_id`='$id' ";
+        $update_job = "UPDATE `jobs` SET `sub_id`=$sub_id, `title`=' $title ',`description`='$description',`soft_skills`='$soft_skills',`technical_skills`='$technical_skills',`average_salary`='$average_salary',`courses`='$courses' , `admin_id`=".$_SESSION['admin_id']." WHERE `job_id`='$id' ";
         $update_query =mysqli_query($con, $update_job) or die('Error in update'.mysqli_error($con));
     }else{
-        $update_job = "UPDATE `jobs` SET `sub_id`=$sub_id, `title`=' $title ',`description`='$description',`soft_skills`='$soft_skills',`technical_skills`='$technical_skills',`average_salary`='$average_salary',`courses`='$courses', `image`= '$image_name' WHERE `job_id`='$id' ";
+        $update_job = "UPDATE `jobs` SET `sub_id`=$sub_id, `title`=' $title ',`description`='$description',`soft_skills`='$soft_skills',`technical_skills`='$technical_skills',`average_salary`='$average_salary',`courses`='$courses', `image`= '$image_name' , `admin_id`=".$_SESSION['admin_id']." WHERE `job_id`='$id' ";
         $update_query =mysqli_query($con, $update_job) or die('Error in update'.mysqli_error($con));
     }
     if(!$update_query){
